@@ -28,6 +28,10 @@ samp {
   font-variant-ligatures: none;
 }
 
+textarea {
+  resize: vertical;
+}
+
 .site-property-editor {
   margin-bottom: 1rem;
   max-width: max-content;
@@ -122,7 +126,7 @@ table-of-contents {
 
 .site-example {
   --site-example-offset: 1rem;
-  border-left: var(--bit-border-width) solid var(--bit-color0);
+  border-left: var(--bit-border-width) solid var(--bit-color-shadow);
   padding-left: var(--site-example-offset);
   margin-left: calc(-1 * var(--site-example-offset));
 }

@@ -80,15 +80,24 @@ class InjectExampleElement extends HTMLElement {
     pre.dataset.exampleType = "html";
     const preH3 = document.createElement("h3");
     preH3.textContent = "Code";
+    preH3.style.display = "inline";
     if ("properties" in this.dataset) {
       const propertyEditor = document.createElement("custom-properties-editor");
       propertyEditor.dataset.properties = this.dataset.properties;
       this.insertAdjacentElement("beforeend", propertyEditor);
     }
+    const details = document.createElement("details");
+    const summary = document.createElement("summary");
+    summary.className = "bit-button";
+    summary.style.maxWidth = "max-content";
+    summary.style.marginTop = "1rem";
+    summary.style.userSelect = "none";
+    summary.insertAdjacentElement("beforeend", preH3);
+    details.insertAdjacentElement("beforeend", summary);
+    details.insertAdjacentElement("beforeend", pre);
     this.insertAdjacentElement("beforeend", divH3);
     this.insertAdjacentElement("beforeend", div);
-    this.insertAdjacentElement("beforeend", preH3);
-    this.insertAdjacentElement("beforeend", pre);
+    this.insertAdjacentElement("beforeend", details);
   }
 }
 

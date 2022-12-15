@@ -1,8 +1,8 @@
 {
-  "name": "1bit-ui",
+  "name": "2bit-ui",
   "version": "0.18.1",
   "description": "CSS library for making 1-bit UIs",
-  "browser": "dist/1bit-ui.css",
+  "browser": "dist/2bit-ui.css",
   "files": [],
   "scripts": {
     "upgrade": "npm-check -u",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wavebeem/1bit-ui.git"
+    "url": "git+https://github.com/wavebeem/2bit-ui.git"
   },
   "keywords": [
     "css",
@@ -21,16 +21,16 @@
     "framework",
     "web"
   ],
-  "author": "Brian Mock <brian@mockbrian.com>",
+  "author": "Brian Mock <brian@wavebeem.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wavebeem/1bit-ui/issues"
+    "url": "https://github.com/wavebeem/2bit-ui/issues"
   },
-  "homepage": "https://github.com/wavebeem/1bit-ui#readme",
+  "homepage": "https://github.com/wavebeem/2bit-ui#readme",
   "devDependencies": {
-    "npm-check": "^5.9.2",
-    "prettier": "^2.0.4",
-    "serve": "^11.3.2",
+    "npm-check": "^6.0.1",
+    "prettier": "^2.8.1",
+    "serve": "^14.1.2",
     "shelljs": "^0.8.3"
   }
 }
