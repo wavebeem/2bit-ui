@@ -1,7 +1,7 @@
 .bit-auto,
 .bit-root {
-  --bit-color-fg: hsl(22 100% 20%);
-  --bit-color-bg: hsl(22 100% 97%);
+  --bit-color-fg: hsl(22 100% 30%);
+  --bit-color-bg: hsl(22 100% 95%);
   --bit-color-shadow: hsl(22 80% 80%);
   --bit-color-accent: hsl(202 100% 30%);
   --bit-button-padding-horizontal: 1rem;
@@ -111,7 +111,8 @@
 .bit-auto input[type="radio"]:focus,
 .bit-checkbox:focus,
 .bit-radio:focus {
-  outline: 0;
+  outline: calc(4 * var(--bit-border-width)) solid var(--bit-color-accent);
+  outline-offset: calc(-2 * var(--bit-border-width));
   box-shadow: 0 0 0 var(--bit-border-width) var(--bit-color-bg),
     0 0 0 calc(2 * var(--bit-border-width)) var(--bit-color-fg),
     inset 0 0 0 var(--bit-border-width) var(--bit-color-bg);
@@ -121,8 +122,8 @@
 .bit-auto input[type="radio"]:checked,
 .bit-checkbox:checked,
 .bit-radio:checked {
-  background: var(--bit-color-fg);
-  box-shadow: inset 0 0 0 calc(2 * var(--bit-border-width)) var(--bit-color-bg);
+  background: var(--bit-color-accent);
+  box-shadow: inset 0 0 0 calc(4 * var(--bit-border-width)) var(--bit-color-bg);
 }
 
 .bit-auto input[type="checkbox"]:checked:hover,
@@ -130,16 +131,16 @@
 .bit-checkbox:checked:hover,
 .bit-radio:checked:hover {
   box-shadow: inset 0 0 0 var(--bit-border-width) var(--bit-color-fg),
-    inset 0 0 0 calc(2 * var(--bit-border-width)) var(--bit-color-bg);
+    inset 0 0 0 calc(4 * var(--bit-border-width)) var(--bit-color-bg);
 }
 
 .bit-auto input[type="checkbox"]:checked:focus,
 .bit-auto input[type="radio"]:checked:focus,
 .bit-checkbox:checked:focus,
 .bit-radio:checked:focus {
-  box-shadow: 0 0 0 var(--bit-border-width) var(--bit-color-bg),
-    0 0 0 calc(2 * var(--bit-border-width)) var(--bit-color-fg),
-    inset 0 0 0 calc(2 * var(--bit-border-width)) var(--bit-color-bg);
+  outline: calc(4 * var(--bit-border-width)) solid var(--bit-color-accent);
+  outline-offset: calc(-2 * var(--bit-border-width));
+  box-shadow: inset 0 0 0 calc(4 * var(--bit-border-width)) var(--bit-color-bg);
 }
 
 .bit-auto input[type="checkbox"]:disabled:hover,
@@ -237,11 +238,9 @@
 .bit-auto input[type="submit"]:focus,
 .bit-auto input[type="color"]:focus,
 .bit-button:focus {
-  outline: none;
-  border-color: var(--bit-color-bg);
-  box-shadow: inset 0 0 0 var(--bit-border-width) var(--bit-color-fg),
-    0 0 0 var(--bit-border-width) var(--bit-color-fg),
-    inset 0 calc(-2 * var(--bit-border-width)) 0 var(--bit-color-fg);
+  outline: calc(4 * var(--bit-border-width)) solid var(--bit-color-accent);
+  outline-offset: calc(-2 * var(--bit-border-width));
+  box-shadow: none;
 }
 
 .bit-auto button:disabled,
@@ -272,40 +271,45 @@
   font: inherit;
   border: var(--bit-border-width) solid var(--bit-color-fg);
   border-radius: var(--bit-border-radius);
-  box-shadow: inset 0 calc(-1 * var(--bit-border-width)) 0 0 var(--bit-color-bg),
-    inset 0 var(--bit-border-width) 0 0 var(--bit-color-bg),
-    inset calc(-1 * var(--bit-border-width)) 0 0 0 var(--bit-color-bg),
-    inset calc(-1 * var(--bit-select-handle-width)) 0 0 0 var(--bit-color-fg),
+  box-shadow: inset 0 calc(2 * var(--bit-border-width)) 0
+    var(--bit-color-shadow);
+
+  box-shadow: inset 0 calc(-2 * var(--bit-border-width)) 0
+      var(--bit-color-shadow),
+    inset 0 calc(-4 * var(--bit-border-width)) 0 0 var(--bit-color-bg),
+    inset 0 calc(4 * var(--bit-border-width)) 0 0 var(--bit-color-bg),
+    inset calc(-4 * var(--bit-border-width)) 0 0 0 var(--bit-color-bg),
+    inset calc(-1 * var(--bit-select-handle-width)) 0 0 0
+      var(--bit-color-accent),
     inset
-      calc(-1 * var(--bit-select-handle-width) + -1 * var(--bit-border-width)) 0
+      calc(-1 * var(--bit-select-handle-width) + -2 * var(--bit-border-width)) 0
       0 0 var(--bit-color-bg);
 }
 
 .bit-auto select:hover,
 .bit-select:hover {
   box-shadow: inset 0 0 0 var(--bit-border-width) var(--bit-color-fg),
-    inset 0 calc(-2 * var(--bit-border-width)) 0 0 var(--bit-color-bg),
-    inset 0 calc(2 * var(--bit-border-width)) 0 0 var(--bit-color-bg),
-    inset calc(-2 * var(--bit-border-width)) 0 0 0 var(--bit-color-bg),
+    inset 0 calc(-4 * var(--bit-border-width)) 0 0 var(--bit-color-bg),
+    inset 0 calc(4 * var(--bit-border-width)) 0 0 var(--bit-color-bg),
+    inset calc(-4 * var(--bit-border-width)) 0 0 0 var(--bit-color-bg),
     inset calc(-1 * var(--bit-select-handle-width)) 0 0 0 var(--bit-color-fg),
     inset
-      calc(-1 * var(--bit-select-handle-width) + -1 * var(--bit-border-width)) 0
+      calc(-1 * var(--bit-select-handle-width) + -4 * var(--bit-border-width)) 0
       0 0 var(--bit-color-bg);
 }
 
 .bit-auto select:focus,
 .bit-select:focus {
-  outline: none;
-  border-color: var(--bit-color-bg);
-  box-shadow: inset 0 0 0 var(--bit-border-width) var(--bit-color-fg),
-    inset 0 calc(-2 * var(--bit-border-width)) 0 0 var(--bit-color-bg),
-    inset 0 calc(2 * var(--bit-border-width)) 0 0 var(--bit-color-bg),
-    inset calc(-2 * var(--bit-border-width)) 0 0 0 var(--bit-color-bg),
-    inset calc(-1 * var(--bit-select-handle-width)) 0 0 0 var(--bit-color-fg),
+  outline: calc(4 * var(--bit-border-width)) solid var(--bit-color-accent);
+  outline-offset: calc(-2 * var(--bit-border-width));
+  box-shadow: inset 0 calc(-4 * var(--bit-border-width)) 0 0 var(--bit-color-bg),
+    inset 0 calc(4 * var(--bit-border-width)) 0 0 var(--bit-color-bg),
+    inset calc(-4 * var(--bit-border-width)) 0 0 0 var(--bit-color-bg),
+    inset calc(-1 * var(--bit-select-handle-width)) 0 0 0
+      var(--bit-color-accent),
     inset
-      calc(-1 * var(--bit-select-handle-width) + -1 * var(--bit-border-width)) 0
-      0 0 var(--bit-color-bg),
-    0 0 0 var(--bit-border-width) var(--bit-color-fg);
+      calc(-1 * var(--bit-select-handle-width) + -4 * var(--bit-border-width)) 0
+      0 0 var(--bit-color-bg);
 }
 
 .bit-auto select:-moz-focusring,
@@ -354,7 +358,7 @@
   color: var(--bit-color-bg);
   text-decoration: none;
   outline: none;
-  outline: calc(3 * var(--bit-border-width)) double var(--bit-color-accent);
+  outline: calc(6 * var(--bit-border-width)) double var(--bit-color-accent);
   outline-offset: 0;
 }
 
@@ -401,11 +405,9 @@
 .bit-auto input[type="password"]:focus,
 .bit-auto textarea:focus,
 .bit-input:focus {
-  outline: none;
-  border-color: var(--bit-color-bg);
-  box-shadow: inset 0 0 0 var(--bit-border-width) var(--bit-color-accent),
-    0 0 0 var(--bit-border-width) var(--bit-color-accent),
-    inset 0 calc(2 * var(--bit-border-width)) 0 var(--bit-color-accent);
+  outline: calc(4 * var(--bit-border-width)) solid var(--bit-color-accent);
+  outline-offset: calc(-2 * var(--bit-border-width));
+  box-shadow: none;
 }
 
 .bit-auto input[type="tel"]:disabled,
