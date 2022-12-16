@@ -29,8 +29,10 @@ const bitRootStyle = getComputedStyle(bitRoot);
 //
 // https://twitter.com/wavebeem/status/1237606557380042752
 const keys = [
-  "--bit-color0",
-  "--bit-color1",
+  "--bit-color-bg",
+  "--bit-color-fg",
+  "--bit-color-shadow",
+  "--bit-color-accent",
   "--bit-button-padding-horizontal",
   "--bit-button-padding-vertical",
   "--bit-select-padding-horizontal",
