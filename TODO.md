@@ -4,3 +4,4 @@
 - Scrub all references to color0 and color1
 - Make the theme selector work again?
 - Remove bit-border-width
+- Change "rounded corners" section to sharp corners
