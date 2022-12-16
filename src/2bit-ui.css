@@ -112,6 +112,7 @@
   align-self: start;
   vertical-align: top;
   box-sizing: border-box;
+  appearance: none;
   -webkit-appearance: none;
   font: inherit;
   width: var(--bit-radiocheckbox-size);
@@ -285,6 +286,7 @@
 .bit-select {
   --bit-select-handle-gap: calc(4 * var(--bit-border-width));
   box-sizing: border-box;
+  appearance: none;
   -webkit-appearance: none;
   background: var(--bit-color-bg);
   color: var(--bit-color-fg);

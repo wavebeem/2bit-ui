@@ -5,3 +5,4 @@
 - Make the theme selector work again?
 - Remove bit-border-width
 - Change "rounded corners" section to sharp corners
+- Add stylelint config?
