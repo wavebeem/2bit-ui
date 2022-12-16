@@ -6,3 +6,5 @@
 - Remove bit-border-width
 - Change "rounded corners" section to sharp corners
 - Add stylelint config?
+- Use shadow color as BG for code/pre blocks?
+- Change code block padding default
