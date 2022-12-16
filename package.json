@@ -1,7 +1,7 @@
 {
   "name": "2bit-ui",
   "version": "0.18.1",
-  "description": "CSS library for making 1-bit UIs",
+  "description": "CSS library for making 2-bit UIs",
   "browser": "dist/2bit-ui.css",
   "files": [],
   "scripts": {

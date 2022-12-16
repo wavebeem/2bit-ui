@@ -24,7 +24,7 @@
     <meta name="og:title" content="2bit-ui" />
     <meta
       name="og:description"
-      content="A CSS library for 1-bit inspired design"
+      content="A CSS library for 2-bit inspired design"
     />
     <meta
       name="og:image"
@@ -82,10 +82,10 @@
       about to click a link.
     </p>
 
-    <!-- I was trying to think of an alternative to lorem ipsum. As it is, I think
-you may have about two sentences more than you need. SK -->
-
-    <inject-example data-example="link"></inject-example>
+    <inject-example
+      data-properties="--bit-underline-thickness"
+      data-example="link"
+    ></inject-example>
 
     <h2 id="selects">Selects</h2>
     <inject-example
@@ -473,9 +473,6 @@ console.log("Hello, world!");</pre
     </template>
 
     <template id="template-link">
-      <custom-properties-editor
-        data-properties="--bit-underline-thickness"
-      ></custom-properties-editor>
       <p>
         This is an
         <a href="#" class="bit-link">example link</a>
