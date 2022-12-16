@@ -1,4 +1,3 @@
-- Shadows in radiochecks
 - Should I redo links?
 - Section on "palette swapping"
 - Hide "CSS custom properties" behind the "Code" button
