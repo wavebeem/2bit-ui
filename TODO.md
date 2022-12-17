@@ -1,6 +1,3 @@
 - Section on "palette swapping"
-- Finish radio/check for hover/focus states
-- Use background-clip and padding for better anti-aliasing?
 - Use background-image instead of box-shadow for select "dropdown"
 - Scrub all references to color0 and color1
-- Make the theme selector work again?
