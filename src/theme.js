@@ -9,6 +9,10 @@ class ThemeSwitchersElement extends HTMLElement {
   connectedCallback() {
     this.classList.add("site-columns-auto");
     for (const element of this.querySelectorAll("[data-theme-switcher]")) {
+      const paletteOrb = document.createElement("div");
+      paletteOrb.className = "site-palette-orb";
+      element.classList.add("site-theme-button");
+      element.insertAdjacentElement("afterbegin", paletteOrb);
       const newTheme = { ...defaultTheme, ...element.dataset };
       element.style.setProperty("--bit-color-bg", newTheme.bitColorBg);
       element.style.setProperty("--bit-color-fg", newTheme.bitColorFg);

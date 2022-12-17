@@ -130,6 +130,10 @@ table-of-contents {
   display: block;
 }
 
+.site-list {
+  padding-left: 1rem;
+}
+
 .site-example {
   --site-example-offset: 1rem;
   border-left: 1px solid var(--bit-color-shadow);
@@ -137,30 +141,26 @@ table-of-contents {
   margin-left: calc(-1 * var(--site-example-offset));
 }
 
-[data-theme-switcher] {
-  position: relative;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-right: 3rem;
+.site-theme-button {
+  line-height: 2rem;
+  text-align: left;
+  font-weight: bold;
 }
 
-[data-theme-switcher]::after {
-  position: absolute;
-  display: block;
-  content: "";
-  transform: rotate(45deg);
-  width: 1rem;
-  height: 1rem;
+.site-palette-orb {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 1rem;
+  margin-bottom: 0.25rem;
+  width: 12px;
+  height: 12px;
   border-radius: 9999px;
   background: var(--bit-color-accent);
   border: 4px solid var(--bit-color-shadow);
-  border-bottom-color: var(--bit-color-fg);
+  border-left-color: var(--bit-color-fg);
   border-right-color: var(--bit-color-fg);
   background-clip: content-box;
-  box-shadow: 0 0 0 2px var(--bit-color-bg);
-  padding: 4px;
-  top: calc(50% - 1rem);
-  right: 1rem;
+  padding: 2px;
 }
 
 @media (min-width: 900px) {
