@@ -1,5 +1,5 @@
 - Section on "palette swapping"
-- Radio button and checkbox shape inside using background-image and gradients?
+- Finish radio/check for hover/focus states
+- Use background-image instead of box-shadow for select "dropdown"
 - Scrub all references to color0 and color1
 - Make the theme selector work again?
-- Add stylelint config?

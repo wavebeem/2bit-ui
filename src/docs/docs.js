@@ -52,7 +52,6 @@ const keys = [
   "--bit-code-padding-horizontal",
   "--bit-code-padding-vertical",
   "--bit-radiocheckbox-size",
-  "--bit-underline-thickness",
   "--bit-border-radius",
   "--bit-select-handle-width",
 ];
