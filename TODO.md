@@ -1,6 +1,5 @@
 - Section on "palette swapping"
+- Radio button and checkbox shape inside using background-image and gradients?
 - Scrub all references to color0 and color1
 - Make the theme selector work again?
-- Change "rounded corners" section to sharp corners
 - Add stylelint config?
-- Change code element padding default
