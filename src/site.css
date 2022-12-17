@@ -126,7 +126,7 @@ table-of-contents {
 
 .site-example {
   --site-example-offset: 1rem;
-  border-left: var(--bit-border-width) solid var(--bit-color-shadow);
+  border-left: 1px solid var(--bit-color-shadow);
   padding-left: var(--site-example-offset);
   margin-left: calc(-1 * var(--site-example-offset));
 }

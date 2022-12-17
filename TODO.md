@@ -1,10 +1,6 @@
-- Should I redo links?
 - Section on "palette swapping"
-- Hide "CSS custom properties" behind the "Code" button
 - Scrub all references to color0 and color1
 - Make the theme selector work again?
-- Remove bit-border-width
 - Change "rounded corners" section to sharp corners
 - Add stylelint config?
-- Use shadow color as BG for code/pre blocks?
-- Change code block padding default
+- Change code element padding default
