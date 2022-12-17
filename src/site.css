@@ -34,7 +34,6 @@ textarea {
 
 .site-property-editor {
   margin: 1rem 0;
-  max-width: max-content;
 }
 
 .site-property-editor-grid {
@@ -116,6 +115,13 @@ table-of-contents {
   display: block;
 }
 
+.site-nav-menu,
+table-of-contents {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .site-toc {
   margin-top: 1rem;
 }
@@ -135,20 +141,23 @@ table-of-contents {
   .site-property-editor-grid {
     --bit-input-padding-horizontal: 0.5rem;
     --bit-input-padding-vertical: 0.25rem;
-    grid-template-columns: max-content 10rem;
+    grid-template-columns: max-content max-content;
   }
 
   .site-nav-menu {
     display: flex;
     flex-direction: row;
+    gap: 1rem;
+  }
+
+  table-of-contents {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .site-nav-menu a {
     display: inline;
-  }
-
-  .site-nav-menu > li + li {
-    padding-left: 1rem;
   }
 
   .site-toc {

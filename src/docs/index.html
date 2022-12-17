@@ -53,9 +53,8 @@
     <h2 id="basics">Basics</h2>
     <p>
       All CSS classes from 2bit-ui start with
-      <code class="bit-code">.bit-</code>. This way you'll always know when
-      you're using 2bit-ui CSS. 2bit-ui uses the lowest CSS specificity
-      possible, if you need to override it.
+      <code class="bit-code">bit-</code>. This way you'll always know when
+      you're using 2bit-ui CSS.
     </p>
 
     <p>
@@ -81,9 +80,7 @@
       about to click a link.
     </p>
 
-    <inject-example
-      data-example="link"
-    ></inject-example>
+    <inject-example data-example="link"></inject-example>
 
     <h2 id="selects">Selects</h2>
     <inject-example
@@ -119,7 +116,8 @@
       <code class="bit-code">bit-field</code> and put a
       <code class="bit-code">label</code> after it with correct
       <code class="bit-code">id</code> and
-      <code class="bit-code">for</code>attributes
+      <code class="bit-code">for</code> attributes (or nest the radio button
+      inside a label)
     </p>
     <inject-example
       data-properties="--bit-radiocheckbox-size"
@@ -132,7 +130,8 @@
       <code class="bit-code">bit-field</code> and put a
       <code class="bit-code">label</code> after it with correct
       <code class="bit-code">id</code> and
-      <code class="bit-code">for</code>attributes
+      <code class="bit-code">for</code> attributes (or nest the checkbox inside
+      a label)
     </p>
     <inject-example
       data-properties="--bit-radiocheckbox-size"
@@ -293,8 +292,9 @@
 
     <h2 id="sharp">Sharp Corners</h2>
     <p>
-      Rounded edges not your thing? You can customize that. CSS Custom Properties
-      are inherited, so you can apply this to your whole page by setting
+      Rounded edges not your thing? You can customize that. CSS Custom
+      Properties are inherited, so you can apply this to your whole page by
+      setting
       <code class="bit-code">--bit-border-radius</code> on any element you want
       through CSS or even inline styles.
     </p>
@@ -319,7 +319,7 @@
 
     <inject-example data-example="auto"></inject-example>
 
-    <footer>
+    <footer class="bit-card">
       &copy; 2022
       <a href="https://www.wavebeem.com" class="bit-link">Brian Mock</a>
     </footer>
@@ -493,7 +493,7 @@ console.log("Hello, world!");</pre
     </template>
 
     <template id="template-sharp">
-      <div style="--bit-border-radius: 0px;" class="bit-card site-columns-auto">
+      <div style="--bit-border-radius: 0px" class="bit-card site-columns-auto">
         <button class="bit-button">OK</button>
         <button class="bit-button">Cancel</button>
         <input class="bit-input" placeholder="Input" />
@@ -514,12 +514,8 @@ console.log("Hello, world!");</pre
         <button type="button" class="bit-button" disabled>Delete</button>
         <button type="button" class="bit-button">&minus;</button>
         <button type="button" class="bit-button">+</button>
-        <button type="button" class="bit-button" disabled>
-          +
-        </button>
-        <button type="button" class="bit-button" disabled>
-          &minus;
-        </button>
+        <button type="button" class="bit-button" disabled>+</button>
+        <button type="button" class="bit-button" disabled>&minus;</button>
         <button type="button" class="bit-button">
           Create from template...
         </button>
@@ -763,7 +759,7 @@ Disabled.</textarea
 
     <template id="template-tableBasic">
       <div class="site-table-responsive">
-        <table class="bit-table" style="width: 100%;">
+        <table class="bit-table" style="width: 100%">
           <thead>
             <tr>
               <th>#</th>
@@ -831,22 +827,16 @@ Disabled.</textarea
         }
       </style>
       <div class="bit-card site-columns-auto site-theme-white">
-        <button type="button" class="bit-button site-theme-blue">
-          Blue
-        </button>
-        <button type="button" class="bit-button site-theme-red">
-          Red
-        </button>
+        <button type="button" class="bit-button site-theme-blue">Blue</button>
+        <button type="button" class="bit-button site-theme-red">Red</button>
         <button
           type="button"
           class="bit-button"
-          style="--bit-color0: #222222; --bit-color1: #eeeeee;"
+          style="--bit-color0: #222222; --bit-color1: #eeeeee"
         >
           Inline Styles
         </button>
-        <button type="button" class="bit-button">
-          Default
-        </button>
+        <button type="button" class="bit-button">Default</button>
       </div>
     </template>
 
@@ -999,22 +989,39 @@ Disabled.</textarea
     </template>
 
     <template id="template-card">
-      <div class="site-columns-auto">
-        <div class="bit-card">
-          This is a 2bit-ui Card. It has a 3D shadow effect, as well as some
-          padding on the inside.
+      <div class="site-flex-column site-gap">
+        <div class="site-flex-row-wrap">
+          <div class="bit-card">
+            <div style="width: 50px; height: 50px; background: red"></div>
+          </div>
+          <div class="bit-card">
+            <div style="width: 50px; height: 50px; background: blue"></div>
+          </div>
+          <div class="bit-card">
+            <div style="width: 50px; height: 50px; background: green"></div>
+          </div>
+          <div class="bit-card">
+            <div style="width: 50px; height: 50px; background: magenta"></div>
+          </div>
         </div>
-        <div class="bit-card">
-          This is a 2bit-ui Card. It has a 3D shadow effect, as well as some
-          padding on the inside.
-        </div>
-        <div class="bit-card">
-          This is a 2bit-ui Card. It has a 3D shadow effect, as well as some
-          padding on the inside.
-        </div>
-        <div class="bit-card">
-          This is a 2bit-ui Card. It has a 3D shadow effect, as well as some
-          padding on the inside.
+
+        <div class="site-columns-auto">
+          <div class="bit-card">
+            This is a 2bit-ui Card. It has a border and comfortable padding to
+            frame your content.
+          </div>
+          <div class="bit-card">
+            This is a 2bit-ui Card. It has a border and comfortable padding to
+            frame your content.
+          </div>
+          <div class="bit-card">
+            This is a 2bit-ui Card. It has a border and comfortable padding to
+            frame your content.
+          </div>
+          <div class="bit-card">
+            This is a 2bit-ui Card. It has a border and comfortable padding to
+            frame your content.
+          </div>
         </div>
       </div>
     </template>
@@ -1023,26 +1030,24 @@ Disabled.</textarea
       <div class="site-flex-column site-gap">
         <div class="site-flex-row-wrap">
           <div class="bit-box">
-            <div style="width: 50px; height: 50px; background: red;"></div>
+            <div style="width: 50px; height: 50px; background: red"></div>
           </div>
           <div class="bit-box">
-            <div style="width: 50px; height: 50px; background: blue;"></div>
+            <div style="width: 50px; height: 50px; background: blue"></div>
           </div>
           <div class="bit-box">
-            <div style="width: 50px; height: 50px; background: green;"></div>
+            <div style="width: 50px; height: 50px; background: green"></div>
           </div>
           <div class="bit-box">
-            <div style="width: 50px; height: 50px; background: magenta;"></div>
+            <div style="width: 50px; height: 50px; background: magenta"></div>
           </div>
         </div>
         <div class="site-columns-auto">
           <div class="bit-box">
-            This is a 2bit-ui Box. It has a simple border and just enough
-            padding to offset your content for a bit of contrast.
+            This is a 2bit-ui Box. It has a simple border and minimal padding.
           </div>
           <div class="bit-box">
-            This is a 2bit-ui Box. It has a simple border and just enough
-            padding to offset your content for a bit of contrast.
+            This is a 2bit-ui Box. It has a simple border and minimal padding.
           </div>
         </div>
       </div>
