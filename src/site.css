@@ -57,6 +57,20 @@ textarea {
   gap: var(--gap);
 }
 
+.site-theme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: 0.25rem;
+}
+
+.site-theme-container {
+  flex: auto;
+  display: grid;
+  border: 1px solid black;
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 25%);
+  border-radius: 3px;
+}
+
 .site-link-header {
   color: inherit;
   text-decoration: none;

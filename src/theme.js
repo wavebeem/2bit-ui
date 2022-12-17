@@ -7,17 +7,20 @@ const defaultTheme = {
 
 class ThemeSwitchersElement extends HTMLElement {
   connectedCallback() {
-    this.classList.add("site-columns-auto");
+    this.classList.add("site-theme-grid");
     for (const element of this.querySelectorAll("[data-theme-switcher]")) {
+      const root = document.createElement("div");
+      root.className = "bit-root site-theme-container";
+      root.style.padding = "1rem";
       const paletteOrb = document.createElement("div");
       paletteOrb.className = "site-palette-orb";
       element.classList.add("site-theme-button");
       element.insertAdjacentElement("afterbegin", paletteOrb);
       const newTheme = { ...defaultTheme, ...element.dataset };
-      element.style.setProperty("--bit-color-bg", newTheme.bitColorBg);
-      element.style.setProperty("--bit-color-fg", newTheme.bitColorFg);
-      element.style.setProperty("--bit-color-shadow", newTheme.bitColorShadow);
-      element.style.setProperty("--bit-color-accent", newTheme.bitColorAccent);
+      root.style.setProperty("--bit-color-bg", newTheme.bitColorBg);
+      root.style.setProperty("--bit-color-fg", newTheme.bitColorFg);
+      root.style.setProperty("--bit-color-shadow", newTheme.bitColorShadow);
+      root.style.setProperty("--bit-color-accent", newTheme.bitColorAccent);
       element.addEventListener(
         "click",
         () => {
@@ -26,6 +29,8 @@ class ThemeSwitchersElement extends HTMLElement {
         },
         false
       );
+      element.insertAdjacentElement("beforebegin", root);
+      root.appendChild(element);
     }
   }
 }
