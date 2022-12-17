@@ -1,23 +1,24 @@
+const defaultTheme = {
+  bitColorBg: "hsl(22 100% 95%)",
+  bitColorFg: "hsl(22 100% 30%)",
+  bitColorShadow: "hsl(22 80% 80%)",
+  bitColorAccent: "hsl(202 100% 30%)",
+};
+
 class ThemeSwitchersElement extends HTMLElement {
   connectedCallback() {
     this.classList.add("site-columns-auto");
-    const { color0, color1 } = getTheme();
     for (const element of this.querySelectorAll("[data-theme-switcher]")) {
-      const c0 = element.dataset.bitTheme0;
-      const c1 = element.dataset.bitTheme1;
-      element.disabled = c0 === color0 && c1 === color1;
-      element.style.setProperty("--bit-color0", c0);
-      element.style.setProperty("--bit-color1", c1);
+      const newTheme = { ...defaultTheme, ...element.dataset };
+      element.style.setProperty("--bit-color-bg", newTheme.bitColorBg);
+      element.style.setProperty("--bit-color-fg", newTheme.bitColorFg);
+      element.style.setProperty("--bit-color-shadow", newTheme.bitColorShadow);
+      element.style.setProperty("--bit-color-accent", newTheme.bitColorAccent);
       element.addEventListener(
         "click",
         () => {
-          for (const button of this.querySelectorAll("[data-theme-switcher]")) {
-            button.disabled = button === element;
-          }
-          const c0 = element.dataset.bitTheme0;
-          const c1 = element.dataset.bitTheme1;
-          setThemeColors(c0, c1);
-          updateThemeExample(c0, c1);
+          setThemeColors(newTheme);
+          updateThemeExample(newTheme);
         },
         false
       );
@@ -27,35 +28,54 @@ class ThemeSwitchersElement extends HTMLElement {
 
 customElements.define("theme-switchers", ThemeSwitchersElement);
 
-function updateThemeExample(color0, color1) {
-  const properties = [color0, color1]
-    .map((c, i) => {
-      return `  --bit-color${i}: ${c};`;
-    })
-    .join("\n");
-  document.querySelector("#theme-example").textContent = `\
+function updateThemeExample({
+  bitColorBg,
+  bitColorFg,
+  bitColorShadow,
+  bitColorAccent,
+}) {
+  const example = document.querySelector("#theme-example");
+  if (!example) {
+    return;
+  }
+  example.textContent = `\
 .bit-root,
 .bit-auto {
-${properties}
+  --bit-color-bg: ${bitColorBg};
+  --bit-color-fg: ${bitColorFg};
+  --bit-color-shadow: ${bitColorShadow};
+  --bit-color-accent: ${bitColorAccent};
 }`;
 }
 
 function getTheme() {
   const userTheme = jsonStorageGet("user-theme", {});
-  const { color0 = "#222323", color1 = "#f0f6f0" } = userTheme;
-  return { color0, color1 };
+  return { ...defaultTheme, ...userTheme };
 }
 
 function restoreUserTheme() {
-  const { color0, color1 } = getTheme();
-  setThemeColors(color0, color1);
+  const theme = getTheme();
+  setThemeColors(theme);
+  updateThemeExample(theme);
 }
 
-function setThemeColors(color0, color1) {
+function setThemeColors({
+  bitColorBg,
+  bitColorFg,
+  bitColorShadow,
+  bitColorAccent,
+}) {
   const root = document.documentElement;
-  root.style.setProperty("--bit-color0", color0);
-  root.style.setProperty("--bit-color1", color1);
-  jsonStorageSet("user-theme", { color0, color1 });
+  root.style.setProperty("--bit-color-bg", bitColorBg);
+  root.style.setProperty("--bit-color-fg", bitColorFg);
+  root.style.setProperty("--bit-color-shadow", bitColorShadow);
+  root.style.setProperty("--bit-color-accent", bitColorAccent);
+  jsonStorageSet("user-theme", {
+    bitColorBg,
+    bitColorFg,
+    bitColorShadow,
+    bitColorAccent,
+  });
 }
 
 function jsonStorageGet(key, fallback) {
@@ -70,5 +90,4 @@ function jsonStorageSet(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
 
-const { color0, color1 } = getTheme();
-updateThemeExample(color0, color1);
+restoreUserTheme();
