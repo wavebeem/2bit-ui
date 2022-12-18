@@ -1,7 +1,7 @@
 {
   "name": "2bit-ui",
-  "version": "0.18.1",
-  "description": "CSS library for making 2-bit UIs",
+  "version": "0.0.0",
+  "description": "A CSS library inspired by the Game Boy Color, for making 2-bit (4 color) interfaces",
   "browser": "dist/2bit-ui.css",
   "files": [],
   "scripts": {
@@ -18,7 +18,22 @@
   "keywords": [
     "css",
     "front-end",
+    "frontend",
+    "front end",
     "framework",
+    "design system",
+    "design",
+    "retro",
+    "game boy",
+    "gameboy",
+    "game boy color",
+    "gameboy color",
+    "minimalist",
+    "simple",
+    "style",
+    "styles",
+    "8-bit",
+    "8bit",
     "web"
   ],
   "author": "Brian Mock <brian@wavebeem.com>",
@@ -31,6 +46,6 @@
     "npm-check": "^6.0.1",
     "prettier": "^2.8.1",
     "serve": "^14.1.2",
-    "shelljs": "^0.8.3"
+    "shelljs": "^0.8.5"
   }
 }
