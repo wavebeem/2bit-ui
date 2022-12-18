@@ -1,3 +1,5 @@
+const html = String.raw;
+
 function htmlToCode(code) {
   const lines = code.replace(/^\n*/, "").replace(/\s+$/, "").split("\n");
   const match = lines[0].match(/^[ ]*/);
@@ -150,7 +152,9 @@ class TableOfContentsElement extends HTMLElement {
       a.textContent = h2.textContent;
       a.className = "bit-link";
       this.appendChild(a);
-      h2.innerHTML = `<a href="#${h2.id}" class="site-link-header">${h2.innerHTML}</a>`;
+      h2.innerHTML = html`<a href="#${h2.id}" class="bit-link site-link-header"
+        >${h2.innerHTML}</a
+      >`;
     }
   }
 }
