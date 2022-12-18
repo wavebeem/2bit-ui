@@ -247,32 +247,12 @@
       besides Firefox will implement this feature.
     </p>
 
-    <h2 id="creative">Get Creative!</h2>
-    <p>
-      CSS Custom Properties can be changed on your page at any time! You can use
-      JavaScript, or even CSS selectors to do it! You could apply a
-      <code class="bit-code">:focus</code> style to change
-      <code class="bit-code">--bit-color0</code> and
-      <code class="bit-code">--bit-color1</code> to different colors to make the
-      focus state easier to read.
-    </p>
-    <p>
-      Or if you have a super dangerous delete button, you could force the color
-      to be red so it stands out against your normal color scheme. 2bit-ui
-      encourages your creativity.
-    </p>
-    <inject-example
-      class="site-example"
-      data-example="getCreative"
-    ></inject-example>
-
     <h2 id="dark">Dark Mode</h2>
     <p>
       You can use the
       <code class="bit-code">prefers-color-scheme: dark</code> CSS media query
-      to set the <code class="bit-code">--bit-color0</code> and
-      <code class="bit-code">--bit-color1</code> variables, allowing your users
-      to automatically get Dark Mode with a single block of CSS
+      to set the <code class="bit-code">--bit-color-*</code> variables, allowing
+      your visitors to automatically get dark mode with a single block of CSS
     </p>
     <pre class="bit-pre">
 .bit-auto,
@@ -817,28 +797,39 @@ Disabled.</textarea
 
     <template id="template-getCreative">
       <style>
-        .site-theme-white {
-          --bit-color0: black;
-          --bit-color1: white;
+        .site-palette-white {
+          --bit-color-fg: black;
+          --bit-color-bg: white;
+          --bit-color-shadow: whitesmoke;
+          --bit-color-accent: blue;
         }
 
-        .site-theme-blue {
-          --bit-color0: hsl(200, 100%, 20%);
-          --bit-color1: hsl(200, 100%, 90%);
+        .site-palette-blue {
+          --bit-color-fg: hsl(200 100% 20%);
+          --bit-color-bg: hsl(200 100% 90%);
+          --bit-color-shadow: hsl(200 100% 80%);
+          --bit-color-accent: hsl(200 100 30%);
         }
 
-        .site-theme-red {
-          --bit-color0: hsl(0, 100%, 20%);
-          --bit-color1: hsl(0, 100%, 90%);
+        .site-palette-red {
+          --bit-color-fg: hsl(0, 100%, 20%);
+          --bit-color-bg: hsl(0, 100%, 90%);
+          --bit-color-shadow: hsl(0 100% 80%);
+          --bit-color-accent: hsl(0 100% 30%);
         }
       </style>
-      <div class="bit-card site-columns-auto site-theme-white">
-        <button type="button" class="bit-button site-theme-blue">Blue</button>
-        <button type="button" class="bit-button site-theme-red">Red</button>
+      <div class="bit-card site-columns-auto site-palette-white">
+        <button type="button" class="bit-button site-palette-blue">Blue</button>
+        <button type="button" class="bit-button site-palette-red">Red</button>
         <button
           type="button"
           class="bit-button"
-          style="--bit-color0: #222222; --bit-color1: #eeeeee"
+          style="
+            --bit-color-fg: #222;
+            --bit-color-bg: #eee;
+            --bit-color-shadow: #ddd;
+            --bit-color-accent: #00f;
+          "
         >
           Inline Styles
         </button>

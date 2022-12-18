@@ -1,2 +1,1 @@
 - Section on "palette swapping"
-- Scrub all references to color0 and color1
