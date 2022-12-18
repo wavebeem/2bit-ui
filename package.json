@@ -9,6 +9,7 @@
     "start": "serve src",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepack": "node bin/build.js",
+    "favicon": "node bin/favicon.js",
     "postversion": "git push --follow-tags && npm publish"
   },
   "repository": {

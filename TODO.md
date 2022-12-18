@@ -1,3 +1,2 @@
 - Section on "palette swapping"
 - Scrub all references to color0 and color1
-- Make fields look more 3D / more exciting somehow?
