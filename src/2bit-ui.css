@@ -143,8 +143,6 @@
 .bit-checkbox:checked,
 .bit-radio:checked {
   background: var(--bit-color-accent);
-  box-shadow: inset 0 0 0 4px var(--bit-color-bg);
-
   box-shadow: inset 0 0 0 2px var(--bit-color-bg),
     inset 0 0 0 6px var(--bit-color-accent);
 }
@@ -190,7 +188,7 @@
       transparent
     );
   box-shadow: inset 0 0 0 2px var(--bit-color-bg),
-    inset 0 0 1px 6px var(--bit-color-accent);
+    inset 0 0 0 6px var(--bit-color-accent);
 }
 
 .bit-auto input[type="radio"]:checked:hover,
@@ -201,7 +199,7 @@
 .bit-auto input[type="checkbox"]:checked:hover,
 .bit-checkbox:checked:hover {
   box-shadow: 0 0 0 1px var(--bit-color-fg), inset 0 0 0 2px var(--bit-color-bg),
-    inset 0 0 1px 6px var(--bit-color-accent);
+    inset 0 0 0 6px var(--bit-color-accent);
 }
 
 .bit-auto input[type="checkbox"]:checked:focus,
