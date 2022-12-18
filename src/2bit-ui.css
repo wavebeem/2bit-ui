@@ -150,44 +150,46 @@
 
 .bit-auto input[type="radio"]:checked,
 .bit-radio:checked {
+  --_bit-radio-blur: 0.25px;
   box-shadow: inset 0 0 0 2px var(--bit-color-bg);
   background-color: var(--bit-color-accent);
   background-image: radial-gradient(
     var(--bit-color-bg),
-    var(--bit-color-bg) 12.5%,
-    var(--bit-color-accent) 12.5%,
+    var(--bit-color-bg) calc(25% - var(--_bit-radio-blur)),
+    var(--bit-color-accent) calc(25% + var(--_bit-radio-blur)),
     var(--bit-color-accent)
   );
 }
 
 .bit-auto input[type="checkbox"]:checked,
 .bit-checkbox:checked {
-  --bit-checkbox-size: 0.125em;
-  --bit-checkbox-start: calc(50% - 0.5 * var(--bit-checkbox-size));
-  --bit-checkbox-end: calc(
-    var(--bit-checkbox-start) + var(--bit-checkbox-size)
+  --_bit-checkbox-blur: 0.5px;
+  --_bit-checkbox-size: 0.125em;
+  --_bit-checkbox-start: calc(50% - 0.5 * var(--_bit-checkbox-size));
+  --_bit-checkbox-end: calc(
+    var(--_bit-checkbox-start) + var(--_bit-checkbox-size)
   );
   background-color: var(--bit-color-accent);
   background-image: linear-gradient(
       45deg,
       transparent,
-      transparent var(--bit-checkbox-start),
-      var(--bit-color-bg) var(--bit-checkbox-start),
-      var(--bit-color-bg) var(--bit-checkbox-end),
-      transparent var(--bit-checkbox-end),
+      transparent calc(var(--_bit-checkbox-start) - var(--_bit-checkbox-blur)),
+      var(--bit-color-bg) var(--_bit-checkbox-start),
+      var(--bit-color-bg) var(--_bit-checkbox-end),
+      transparent calc(var(--_bit-checkbox-end) + var(--_bit-checkbox-blur)),
       transparent
     ),
     linear-gradient(
       -45deg,
       transparent,
-      transparent var(--bit-checkbox-start),
-      var(--bit-color-bg) var(--bit-checkbox-start),
-      var(--bit-color-bg) var(--bit-checkbox-end),
-      transparent var(--bit-checkbox-end),
+      transparent calc(var(--_bit-checkbox-start) - var(--_bit-checkbox-blur)),
+      var(--bit-color-bg) var(--_bit-checkbox-start),
+      var(--bit-color-bg) var(--_bit-checkbox-end),
+      transparent calc(var(--_bit-checkbox-end) + var(--_bit-checkbox-blur)),
       transparent
     );
   box-shadow: inset 0 0 0 2px var(--bit-color-bg),
-    inset 0 0 0 6px var(--bit-color-accent);
+    inset 0 0 0.25px 6px var(--bit-color-accent);
 }
 
 .bit-auto input[type="radio"]:checked:hover,
@@ -324,7 +326,7 @@
 
 .bit-auto select,
 .bit-select {
-  --bit-select-handle-gap: 4px;
+  --_bit-select-handle-gap: 4px;
   box-sizing: border-box;
   appearance: none;
   -webkit-appearance: none;
@@ -333,15 +335,15 @@
       var(--bit-color-accent),
       var(--bit-color-accent)
     )
-    calc(100% - var(--bit-select-handle-gap)) var(--bit-select-handle-gap) /
-    var(--bit-select-handle-width) calc(100% - 2 * var(--bit-select-handle-gap))
-    no-repeat var(--bit-color-bg);
+    calc(100% - var(--_bit-select-handle-gap)) var(--_bit-select-handle-gap) /
+    var(--bit-select-handle-width)
+    calc(100% - 2 * var(--_bit-select-handle-gap)) no-repeat var(--bit-color-bg);
   color: var(--bit-color-fg);
   padding: var(--bit-select-padding-vertical)
     var(--bit-select-padding-horizontal);
   padding-right: calc(
     var(--bit-select-padding-horizontal) + var(--bit-select-handle-width) +
-      calc(2 * var(--bit-select-handle-gap))
+      calc(2 * var(--_bit-select-handle-gap))
   );
   font: inherit;
   border: 1px solid var(--bit-color-fg);
@@ -352,17 +354,17 @@
 .bit-auto select:hover,
 .bit-select:hover {
   box-shadow: inset 0 0 0 1px var(--bit-color-fg),
-    inset 0 calc(-1 * var(--bit-select-handle-gap)) 0 0 var(--bit-color-bg),
-    inset 0 calc(1 * var(--bit-select-handle-gap)) 0 0 var(--bit-color-bg),
-    inset calc(-1 * var(--bit-select-handle-gap)) 0 0 0 var(--bit-color-bg),
+    inset 0 calc(-1 * var(--_bit-select-handle-gap)) 0 0 var(--bit-color-bg),
+    inset 0 calc(1 * var(--_bit-select-handle-gap)) 0 0 var(--bit-color-bg),
+    inset calc(-1 * var(--_bit-select-handle-gap)) 0 0 0 var(--bit-color-bg),
     inset
       calc(
-        -1 * var(--bit-select-handle-width) + -1 * var(--bit-select-handle-gap)
+        -1 * var(--bit-select-handle-width) + -1 * var(--_bit-select-handle-gap)
       )
       0 0 0 var(--bit-color-accent),
     inset
       calc(
-        -1 * var(--bit-select-handle-width) + -2 * var(--bit-select-handle-gap)
+        -1 * var(--bit-select-handle-width) + -2 * var(--_bit-select-handle-gap)
       )
       0 0 0 var(--bit-color-bg);
 }
@@ -372,17 +374,17 @@
   outline: 4px solid var(--bit-color-accent);
   outline-offset: -2px;
   box-shadow: inset 0 0 0 1px var(--bit-color-fg),
-    inset 0 calc(-1 * var(--bit-select-handle-gap)) 0 0 var(--bit-color-bg),
-    inset 0 calc(1 * var(--bit-select-handle-gap)) 0 0 var(--bit-color-bg),
-    inset calc(-1 * var(--bit-select-handle-gap)) 0 0 0 var(--bit-color-bg),
+    inset 0 calc(-1 * var(--_bit-select-handle-gap)) 0 0 var(--bit-color-bg),
+    inset 0 calc(1 * var(--_bit-select-handle-gap)) 0 0 var(--bit-color-bg),
+    inset calc(-1 * var(--_bit-select-handle-gap)) 0 0 0 var(--bit-color-bg),
     inset
       calc(
-        -1 * var(--bit-select-handle-width) + -1 * var(--bit-select-handle-gap)
+        -1 * var(--bit-select-handle-width) + -1 * var(--_bit-select-handle-gap)
       )
       0 0 0 var(--bit-color-accent),
     inset
       calc(
-        -1 * var(--bit-select-handle-width) + -2 * var(--bit-select-handle-gap)
+        -1 * var(--bit-select-handle-width) + -2 * var(--_bit-select-handle-gap)
       )
       0 0 0 var(--bit-color-bg);
 }
@@ -398,18 +400,18 @@
   opacity: 0.5;
   border-color: var(--bit-color-fg);
   border-style: dotted;
-  box-shadow: inset 0 calc(-1 * var(--bit-select-handle-gap)) 0 0
+  box-shadow: inset 0 calc(-1 * var(--_bit-select-handle-gap)) 0 0
       var(--bit-color-bg),
-    inset 0 calc(1 * var(--bit-select-handle-gap)) 0 0 var(--bit-color-bg),
-    inset calc(-1 * var(--bit-select-handle-gap)) 0 0 0 var(--bit-color-bg),
+    inset 0 calc(1 * var(--_bit-select-handle-gap)) 0 0 var(--bit-color-bg),
+    inset calc(-1 * var(--_bit-select-handle-gap)) 0 0 0 var(--bit-color-bg),
     inset
       calc(
-        -1 * var(--bit-select-handle-width) + -1 * var(--bit-select-handle-gap)
+        -1 * var(--bit-select-handle-width) + -1 * var(--_bit-select-handle-gap)
       )
       0 0 0 var(--bit-color-fg),
     inset
       calc(
-        -1 * var(--bit-select-handle-width) + -2 * var(--bit-select-handle-gap)
+        -1 * var(--bit-select-handle-width) + -2 * var(--_bit-select-handle-gap)
       )
       0 0 0 var(--bit-color-bg);
 }
