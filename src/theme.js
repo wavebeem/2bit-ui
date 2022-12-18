@@ -1,3 +1,5 @@
+const css = String.raw;
+
 const defaultTheme = {
   bitColorBg: "hsl(22 100% 95%)",
   bitColorFg: "hsl(22 100% 30%)",
@@ -65,7 +67,25 @@ function getTheme() {
 function restoreUserTheme() {
   const theme = getTheme();
   setThemeColors(theme);
+  setTimeout(() => {
+    setThemeColors(theme);
+  }, 0);
   updateThemeExample(theme);
+}
+
+function $(selector, root = document) {
+  return root.querySelector(selector);
+}
+
+function $$(selector, root = document) {
+  return Array.from(root.querySelectorAll(selector));
+}
+
+function _(tagName, props, ...children) {
+  const element = document.createElement(tagName);
+  Object.assign(element, props);
+  element.append(...children);
+  return element;
 }
 
 function setThemeColors({
@@ -74,11 +94,20 @@ function setThemeColors({
   bitColorShadow,
   bitColorAccent,
 }) {
-  const root = document.documentElement;
-  root.style.setProperty("--bit-color-bg", bitColorBg);
-  root.style.setProperty("--bit-color-fg", bitColorFg);
-  root.style.setProperty("--bit-color-shadow", bitColorShadow);
-  root.style.setProperty("--bit-color-accent", bitColorAccent);
+  let style = $("style#theme");
+  if (!style) {
+    style = _("style", { id: "theme" });
+    document.head.append(style);
+  }
+  style.textContent = css`
+    .bit-root,
+    .bit-auto {
+      --bit-color-bg: ${bitColorBg};
+      --bit-color-fg: ${bitColorFg};
+      --bit-color-shadow: ${bitColorShadow};
+      --bit-color-accent: ${bitColorAccent};
+    }
+  `;
   jsonStorageSet("user-theme", {
     bitColorBg,
     bitColorFg,
