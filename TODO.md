@@ -1,3 +1,2 @@
 - Section on "palette swapping"
-- Use background-image instead of box-shadow for select "dropdown"
 - Scrub all references to color0 and color1
