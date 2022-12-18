@@ -126,17 +126,15 @@
 .bit-auto input[type="radio"]:hover,
 .bit-checkbox:hover,
 .bit-radio:hover {
-  box-shadow: inset 0 0 0 1px var(--bit-color-fg);
+  box-shadow: 0 0 0 1px var(--bit-color-fg);
 }
 
 .bit-auto input[type="checkbox"]:focus,
 .bit-auto input[type="radio"]:focus,
 .bit-checkbox:focus,
 .bit-radio:focus {
-  outline: 4px solid var(--bit-color-accent);
-  outline-offset: -2px;
-  box-shadow: 0 0 0 1px var(--bit-color-bg), 0 0 0 2px var(--bit-color-fg),
-    inset 0 0 0 1px var(--bit-color-bg);
+  outline: 3px solid var(--bit-color-accent);
+  outline-offset: -1px;
 }
 
 .bit-auto input[type="checkbox"]:checked,
@@ -207,7 +205,7 @@
 .bit-auto input[type="radio"]:checked:focus,
 .bit-checkbox:checked:focus,
 .bit-radio:checked:focus {
-  outline: 4px solid var(--bit-color-accent);
+  outline: 3px solid var(--bit-color-accent);
   outline-offset: -1px;
 }
 
@@ -305,7 +303,7 @@
 .bit-auto input[type="submit"]:focus,
 .bit-auto input[type="color"]:focus,
 .bit-button:focus {
-  outline: 4px solid var(--bit-color-accent);
+  outline: 3px solid var(--bit-color-accent);
   outline-offset: -2px;
   box-shadow: none;
 }
@@ -371,7 +369,7 @@
 
 .bit-auto select:focus,
 .bit-select:focus {
-  outline: 4px solid var(--bit-color-accent);
+  outline: 3px solid var(--bit-color-accent);
   outline-offset: -2px;
   box-shadow: inset 0 0 0 1px var(--bit-color-fg),
     inset 0 calc(-1 * var(--_bit-select-handle-gap)) 0 0 var(--bit-color-bg),
@@ -427,22 +425,15 @@
 
 .bit-auto a:hover,
 .bit-link:hover {
-  border-radius: var(--bit-border-radius);
-  background: var(--bit-color-bg);
-  text-decoration: none;
-  outline: 2px solid var(--bit-color-fg);
-  outline-offset: 2px;
+  text-decoration: underline;
 }
 
 .bit-auto a:focus,
 .bit-link:focus {
   border-radius: var(--bit-border-radius);
-  background: var(--bit-color-accent);
-  color: var(--bit-color-bg);
   text-decoration: none;
-  outline: none;
-  outline: 6px double var(--bit-color-accent);
-  outline-offset: 0;
+  outline: 2px solid var(--bit-color-accent);
+  outline-offset: 2px;
 }
 
 /* Input / Text Area */
@@ -487,7 +478,7 @@
 .bit-auto input[type="password"]:focus,
 .bit-auto textarea:focus,
 .bit-input:focus {
-  outline: 4px solid var(--bit-color-accent);
+  outline: 3px solid var(--bit-color-accent);
   outline-offset: -2px;
   box-shadow: none;
 }

@@ -130,10 +130,15 @@ table-of-contents {
 }
 
 .site-nav-menu,
-table-of-contents {
+.site-toc {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.site-nav-menu a,
+.site-toc a {
+  text-decoration: none;
 }
 
 .site-toc {
@@ -190,7 +195,7 @@ table-of-contents {
     gap: 1rem;
   }
 
-  table-of-contents {
+  .site-toc {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
