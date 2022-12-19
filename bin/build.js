@@ -12,7 +12,7 @@ const year = new Date().getFullYear();
 
 const header = `\
 /**
- * @license
+ * @license MIT
  * 2bit-ui v${version}
  * Copyright ${year} Brian Mock
  * https://2bit-ui.wavebeem.com
