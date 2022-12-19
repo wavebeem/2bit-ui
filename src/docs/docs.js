@@ -143,7 +143,7 @@ customElements.define(
   CustomPropertiesEditorElement
 );
 
-class TableOfContentsElement extends HTMLElement {
+class HTMLSiteTocElement extends HTMLElement {
   connectedCallback() {
     this.classList.add("bit-card", "site-toc");
     for (const h2 of document.querySelectorAll("h2")) {
@@ -159,4 +159,4 @@ class TableOfContentsElement extends HTMLElement {
   }
 }
 
-customElements.define("table-of-contents", TableOfContentsElement);
+customElements.define("site-toc", HTMLSiteTocElement);
