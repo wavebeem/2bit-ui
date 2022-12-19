@@ -22,8 +22,9 @@ const header = `\
 
 const srcCSS = sh.cat(path.join(__dirname, "../src/2bit-ui.css")).stdout;
 const distCSS = header + srcCSS;
+const srcDir = path.join(__dirname, "../src");
 const distDir = path.join(__dirname, "../dist");
 const distFile = path.join(distDir, "2bit-ui.css");
 sh.rm("-rf", distDir);
-sh.mkdir("-p", distDir);
+sh.cp("-r", srcDir, distDir);
 sh.ShellString(distCSS).to(distFile);

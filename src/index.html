@@ -156,20 +156,18 @@
     <p>
       You can use 2bit-ui with basic form fields and other elements. 2bit-ui
       requires the use of CSS classes, so it won't clash with your existing CSS.
-      2bit-ui also uses the lowest specificity for each rule, making it much
+      2bit-ui also uses relatively low specificity for each rule, making it much
       less likely to override your existing CSS.
     </p>
     <p>
-      2bit-ui is about 15 KB of unminified CSS and compresses to about 2.5 KB
+      2bit-ui is about 18 KB of unminified CSS and compresses to about 2.6 KB
       via gzip compression.
     </p>
 
     <h2>Standard Installation</h2>
     <p>
       Download
-      <a href="https://unpkg.com/2bit-ui/dist/2bit-ui.css" class="bit-link"
-        >2bit-ui.css</a
-      >
+      <a download href="/2bit-ui.css" class="bit-link">2bit-ui.css</a>
       and use a <code class="bit-code">link</code> tag:
     </p>
     <pre class="bit-pre">
@@ -177,19 +175,22 @@
     >
 
     <h2>Webpack Installation</h2>
+
     <p>
       If you're using
       <a href="https://webpack.js.org/loaders/css-loader/" class="bit-link"
         >webpack with css-loader</a
       >, you can install it through npm:
     </p>
+
     <pre class="bit-pre">npm install 2bit-ui</pre>
+
     <p>Then load the CSS through your JavaScript:</p>
-    <pre class="bit-pre">import "2bit-ui/dist/2bit-ui.css";</pre>
+
+    <pre class="bit-pre">import "2bit-ui";</pre>
 
     <p>
-      To use one of the custom themes at the top, add the following CSS to your
-      page:
+      To use one of the custom themes above, add the following CSS to your page:
     </p>
 
     <pre id="theme-example" class="bit-pre"></pre>

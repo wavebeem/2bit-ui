@@ -3,12 +3,16 @@
   "version": "0.0.0",
   "description": "A CSS library inspired by the Game Boy Color, for making 2-bit (4 color) interfaces",
   "browser": "dist/2bit-ui.css",
-  "files": [],
+  "files": [
+    "dist/2bit-ui.css",
+    "CHANGELOG.md"
+  ],
   "scripts": {
     "upgrade": "npm-check -u",
     "start": "serve src",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepack": "node bin/build.js",
+    "build": "node bin/build.js",
+    "prepack": "npm run build",
     "favicon": "node bin/favicon.js",
     "postversion": "git push --follow-tags && npm publish"
   },
