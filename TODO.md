@@ -1,1 +1,0 @@
-- Section on "palette swapping"
