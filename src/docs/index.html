@@ -10,7 +10,7 @@
     <link rel="manifest" href="/manifest.json" />
     <link rel="stylesheet" href="/2bit-ui.css" />
     <link rel="stylesheet" href="/site.css" />
-    <script type="module" src="/theme.js"></script>
+    <script type="module" src="/index.js"></script>
     <script type="module" src="docs.js"></script>
     <script
       async
@@ -32,6 +32,8 @@
     />
   </head>
   <body>
+    <site-theme-loader></site-theme-loader>
+
     <h1><span class="bit-code">2bit-ui</span></h1>
 
     <nav class="bit-card">
@@ -39,6 +41,9 @@
         <li><a href="/" class="bit-link">Home</a></li>
         <li><a href="/docs/" class="bit-link">Documentation</a></li>
         <li><a href="/examples/" class="bit-link">Examples</a></li>
+        <li>
+          <a href="/palette-swapping/" class="bit-link">Palette Swapping</a>
+        </li>
       </ul>
     </nav>
     <table-of-contents></table-of-contents>

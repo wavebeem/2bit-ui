@@ -117,7 +117,7 @@
   height: var(--bit-radiocheckbox-size);
   margin: 2px;
   background: var(--bit-color-bg);
-  background-clip: content-box;
+  background-clip: padding-box;
   padding: 2px;
   color: var(--bit-color-fg);
   border: 1px solid var(--bit-color-fg);

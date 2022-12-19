@@ -129,6 +129,14 @@ table-of-contents {
   display: block;
 }
 
+site-theme-loader {
+  display: none;
+}
+
+site-example-css {
+  display: contents;
+}
+
 .site-nav-menu,
 .site-toc {
   display: grid;

@@ -10,7 +10,7 @@
     <link rel="manifest" href="/manifest.json" />
     <link rel="stylesheet" href="/2bit-ui.css" />
     <link rel="stylesheet" href="/site.css" />
-    <script type="module" src="/index.js"></script>
+    <script type="module" src="/palette-swapping/palette-swapping.js"></script>
     <script
       async
       defer
@@ -31,8 +31,6 @@
     />
   </head>
   <body>
-    <site-theme-loader></site-theme-loader>
-
     <h1><span class="bit-code">2bit-ui</span></h1>
 
     <nav class="bit-card">
@@ -46,7 +44,137 @@
       </ul>
     </nav>
 
-    <h2>Form Examples</h2>
+    <h2>Palette Swapping</h2>
+
+    <p>
+      Palette swapping is a term used in video game development for using the
+      same underlying image but with the colors replaced with those from a new
+      palette. 2bit-ui was designed with this in mind. Directly, 2bit-ui has a
+      similar 2-bit (4 color) design like the original monochrome Game Boy, but
+      thru palette swapping each element we can achieve many more colors on
+      screen, like on the Game Boy Color.
+    </p>
+
+    <h3>General styles</h3>
+
+    <p>Let's start with a basic pink &amp; green theme.</p>
+
+    <site-example-css>
+      <pre class="bit-pre">
+.bit-root {
+  --bit-color-bg: hsl(340 100% 95%);
+  --bit-color-fg: hsl(340 100% 30%);
+  --bit-color-shadow: hsl(340 80% 80%);
+  --bit-color-accent: hsl(160 100% 24%);
+}
+</pre
+      >
+    </site-example-css>
+
+    <select class="bit-select">
+      <option>Example select &ndash; Option 1</option>
+      <option>Example select &ndash; Option 2</option>
+      <option>Example select &ndash; Option 3</option>
+    </select>
+
+    <h3>Card styles</h3>
+
+    <p>
+      Cards should have a slightly lighter background, and a slightly darker
+      border.
+    </p>
+
+    <site-example-css>
+      <pre class="bit-pre">
+.bit-card {
+  --bit-color-bg: hsl(340 100% 96%);
+  --bit-color-fg: hsl(340 100% 30%);
+  --bit-color-shadow: hsl(340 80% 75%);
+  --bit-color-accent: hsl(160 100% 24%);
+}
+</pre
+      >
+    </site-example-css>
+
+    <div class="site-flex-row-wrap site-gap">
+      <div class="bit-card">
+        <b>Example heading</b>
+        <div class="site-spacer"></div>
+        <div>Content would go here.</div>
+      </div>
+      <div class="bit-card">
+        <b>Example heading</b>
+        <div class="site-spacer"></div>
+        <div>Content would go here.</div>
+      </div>
+      <div class="bit-card">
+        <b>Example heading</b>
+        <div class="site-spacer"></div>
+        <div>Content would go here.</div>
+      </div>
+    </div>
+
+    <h3>Form styles</h3>
+
+    <p>
+      Text inputs, text areas, radio buttons, checkboxes, and selects should
+      have a slightly lighter background and more subtle shadow.
+    </p>
+
+    <site-example-css>
+      <pre class="bit-pre">
+.bit-checkbox,
+.bit-radio,
+.bit-input,
+.bit-select {
+  --bit-color-bg: hsl(340 100% 98%);
+  --bit-color-fg: hsl(340 100% 30%);
+  --bit-color-shadow: hsl(340 80% 90%);
+  --bit-color-accent: hsl(160 100% 24%);
+}
+</pre
+      >
+    </site-example-css>
+
+    <div class="site-flex-column site-gap">
+      <div class="site-flex-row-wrap site-gap">
+        <input name="test" type="radio" class="bit-radio" checked />
+        <input name="test" type="radio" class="bit-radio" />
+        <input type="checkbox" class="bit-checkbox" checked />
+        <input type="checkbox" class="bit-checkbox" />
+        <input class="bit-input" value="Text input" />
+        <select class="bit-select">
+          <option>Select</option>
+        </select>
+      </div>
+      <div class="site-flex-row-wrap site-gap">
+        <textarea class="bit-input">Text area</textarea>
+      </div>
+    </div>
+
+    <h3>Button styles</h3>
+
+    <p>Finally, buttons look just a little different so they stand out.</p>
+
+    <site-example-css>
+      <pre class="bit-pre">
+.bit-button {
+  --bit-color-bg: hsl(340 100% 96%);
+  --bit-color-fg: hsl(340 100% 30%);
+  --bit-color-shadow: hsl(340 80% 86%);
+  --bit-color-accent: hsl(160 100% 24%);
+}</pre
+      >
+    </site-example-css>
+
+    <button type="button" class="bit-button">Button</button>
+
+    <div class="site-spacer"></div>
+
+    <h3>Full example</h3>
+
+    <p>Putting this all together, we get a form that looks like this:</p>
+
     <div class="site-columns-auto" style="--grid-min: 20rem">
       <form class="bit-card" action="" onsubmit="event.preventDefault();">
         <h3 class="site-example-heading">Welcome Back!</h3>
@@ -60,7 +188,7 @@
           <div class="site-spacer"></div>
 
           <div class="site-spacer"></div>
-          <button class="bit-button">Log In</button>
+          <button type="button" class="bit-button">Log In</button>
         </div>
       </form>
 
@@ -227,7 +355,7 @@
           </div>
 
           <div class="site-spacer"></div>
-          <button class="bit-button">Submit</button>
+          <button type="submit" class="bit-button">Submit</button>
         </div>
       </form>
     </div>
