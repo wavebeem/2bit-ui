@@ -133,6 +133,8 @@ site-theme-loader {
   display: none;
 }
 
+site-nav,
+site-footer,
 site-example-css {
   display: contents;
 }

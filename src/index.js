@@ -1,3 +1,4 @@
+const html = String.raw;
 const css = String.raw;
 
 const defaultTheme = {
@@ -135,3 +136,36 @@ class HTMLSiteThemeLoaderElement extends HTMLElement {
 }
 
 customElements.define("site-theme-loader", HTMLSiteThemeLoaderElement);
+
+class HTMLSiteNavElement extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = html`
+      <nav class="bit-card">
+        <ul class="site-nav-menu">
+          <li><a href="/" class="bit-link">Home</a></li>
+          <li><a href="/docs/" class="bit-link">Documentation</a></li>
+          <li><a href="/form-example/" class="bit-link">Form Example</a></li>
+          <li>
+            <a href="/palette-swapping/" class="bit-link">Palette Swapping</a>
+          </li>
+        </ul>
+      </nav>
+    `;
+  }
+}
+
+customElements.define("site-nav", HTMLSiteNavElement);
+
+class HTMLSiteFooterElement extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = html`
+      <footer class="bit-card">
+        &copy; <span data-slot="year"></span>
+        <a href="https://www.wavebeem.com" class="bit-link">Brian Mock</a>
+      </footer>
+    `;
+    $("[data-slot='year']", this).textContent = new Date().getFullYear();
+  }
+}
+
+customElements.define("site-footer", HTMLSiteFooterElement);

@@ -33,16 +33,7 @@
   <body>
     <h1><span class="bit-code">2bit-ui</span></h1>
 
-    <nav class="bit-card">
-      <ul class="site-nav-menu">
-        <li><a href="/" class="bit-link">Home</a></li>
-        <li><a href="/docs/" class="bit-link">Documentation</a></li>
-        <li><a href="/examples/" class="bit-link">Examples</a></li>
-        <li>
-          <a href="/palette-swapping/" class="bit-link">Palette Swapping</a>
-        </li>
-      </ul>
-    </nav>
+    <site-nav></site-nav>
 
     <h2>Palette Swapping</h2>
 
@@ -159,10 +150,10 @@
     <site-example-css>
       <pre class="bit-pre">
 .bit-button {
-  --bit-color-bg: hsl(340 100% 96%);
+  --bit-color-bg: hsl(340 100% 90%);
   --bit-color-fg: hsl(340 100% 30%);
-  --bit-color-shadow: hsl(340 80% 86%);
-  --bit-color-accent: hsl(160 100% 24%);
+  --bit-color-shadow: hsl(340 80% 75%);
+  --bit-color-accent: hsl(160 100% 21%);
 }</pre
       >
     </site-example-css>
@@ -360,9 +351,6 @@
       </form>
     </div>
 
-    <footer class="bit-card">
-      &copy; 2022
-      <a href="https://www.wavebeem.com" class="bit-link">Brian Mock</a>
-    </footer>
+    <site-footer></site-footer>
   </body>
 </html>
