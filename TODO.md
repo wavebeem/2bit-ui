@@ -1,3 +1,4 @@
 - Add inheritance caveat to palette swapping page
 - Add blockquote
 - Add modal
+- 2px underline for links?

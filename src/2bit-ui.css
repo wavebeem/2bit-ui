@@ -468,19 +468,19 @@
 .bit-auto a,
 .bit-link {
   color: var(--bit-color-accent);
-  text-decoration: underline;
+  text-decoration-line: underline;
   border-radius: var(--bit-border-radius);
 }
 
 .bit-auto a:hover,
 .bit-link:hover {
-  text-decoration: underline;
+  text-decoration-line: underline;
 }
 
 .bit-auto a:focus,
 .bit-link:focus {
   border-radius: var(--bit-border-radius);
-  text-decoration: none;
+  text-decoration-line: none;
   outline: 2px solid var(--bit-color-accent);
   outline-offset: 2px;
 }
