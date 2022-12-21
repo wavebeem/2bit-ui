@@ -8,6 +8,7 @@
 
   /* General */
   --bit-border-radius: 2px;
+  --bit-underline-thickness: 2px;
 
   /* Button */
   --bit-button-padding-horizontal: 1rem;
@@ -468,19 +469,19 @@
 .bit-auto a,
 .bit-link {
   color: var(--bit-color-accent);
-  text-decoration-line: underline;
+  text-decoration: var(--bit-underline-thickness) underline;
   border-radius: var(--bit-border-radius);
 }
 
 .bit-auto a:hover,
 .bit-link:hover {
-  text-decoration-line: underline;
+  text-decoration: var(--bit-underline-thickness) underline;
 }
 
 .bit-auto a:focus,
 .bit-link:focus {
   border-radius: var(--bit-border-radius);
-  text-decoration-line: none;
+  text-decoration: none;
   outline: 2px solid var(--bit-color-accent);
   outline-offset: 2px;
 }
