@@ -1,6 +1,6 @@
 # 2bit-ui
 
-2bit-ui is a CSS library for making retro-inspired web pages using just two colors.
+2bit-ui is a CSS library for making retro-inspired web pages using just four colors.
 
 Go to [2bit-ui.wavebeem.com](https://2bit-ui.wavebeem.com) for examples, documentation, and usage.
 
@@ -13,7 +13,7 @@ $ npm install
 $ npm start
 ```
 
-Edit `src/2bit-ui.css`. It's the only file that gets published to npm. Open your browser to <http://localhost:5000/>.
+Edit `src/2bit-ui.css`. It's the only file that gets published to npm. Open your browser to the URL printed in your terminal.
 
 > If you're unfamiliar with npm, you can [download the Node.js installer here](https://nodejs.org/en/download/) to get started with npm. Read more about [how to use npm here](https://docs.npmjs.com/about-npm/).
 
