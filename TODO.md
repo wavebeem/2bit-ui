@@ -1,4 +1,3 @@
 - Add inheritance caveat to palette swapping page
-- Add blockquote
 - Add modal
 - Simplify select and draw just an arrow?
