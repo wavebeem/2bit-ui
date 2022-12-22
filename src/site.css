@@ -57,7 +57,7 @@ body {
 
 footer {
   margin-top: 1rem;
-  text-decoration: none;
+  text-decoration-line: none;
 }
 
 pre,
@@ -113,11 +113,11 @@ textarea {
 
 .site-link-header {
   color: inherit;
-  text-decoration: none;
+  text-decoration-line: none;
 }
 
 .site-link-header:hover {
-  text-decoration: underline;
+  text-decoration-line: underline;
   text-decoration-thickness: 2px;
 }
 
@@ -189,7 +189,7 @@ site-example-css {
 footer .bit-link,
 .site-nav-menu a,
 .site-toc a {
-  text-decoration: none;
+  text-decoration-line: none;
 }
 
 .site-toc {

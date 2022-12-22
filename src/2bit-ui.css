@@ -376,13 +376,14 @@
 .bit-auto a,
 .bit-link {
   color: var(--bit-color-accent);
-  text-decoration: var(--bit-underline-thickness) underline;
+  text-decoration-line: underline;
+  text-decoration-thickness: var(--bit-underline-thickness);
   border-radius: var(--bit-border-radius);
 }
 
 .bit-auto a:focus,
 .bit-link:focus {
-  text-decoration: none;
+  text-decoration-line: none;
   outline: 2px solid var(--bit-color-accent);
   outline-offset: 2px;
 }
