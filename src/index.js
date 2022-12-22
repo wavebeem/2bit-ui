@@ -82,7 +82,7 @@ export function $$(selector, root = document) {
   return Array.from(root.querySelectorAll(selector));
 }
 
-export function _(tagName, props, ...children) {
+export function $elem(tagName, props, ...children) {
   const element = document.createElement(tagName);
   Object.assign(element, props);
   element.append(...children);
@@ -95,9 +95,18 @@ function setThemeColors({
   bitColorShadow,
   bitColorAccent,
 }) {
-  let style = $("style#theme");
+  // Update meta theme color
+  let meta = $("meta.theme");
+  if (!meta) {
+    meta = $elem("meta", { className: "theme" });
+    document.head.append(meta);
+  }
+  meta.name = "theme-color";
+  meta.content = bitColorBg;
+  // Update styles
+  let style = $("style.theme");
   if (!style) {
-    style = _("style", { id: "theme" });
+    style = $elem("style", { className: "theme" });
     document.head.append(style);
   }
   style.textContent = css`
@@ -109,6 +118,7 @@ function setThemeColors({
       --bit-color-accent: ${bitColorAccent};
     }
   `;
+  // Save theme
   jsonStorageSet("user-theme", {
     bitColorBg,
     bitColorFg,
