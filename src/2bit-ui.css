@@ -126,14 +126,6 @@
     inset 0 3px 0 var(--bit-color-shadow);
 }
 
-.bit-auto input[type="checkbox"]:hover,
-.bit-auto input[type="radio"]:hover,
-.bit-checkbox:hover,
-.bit-radio:hover {
-  box-shadow: inset 0 0 0 1px var(--bit-color-fg),
-    inset 0 2px 0 0 var(--bit-color-fg);
-}
-
 .bit-auto input[type="checkbox"]:focus,
 .bit-auto input[type="radio"]:focus,
 .bit-checkbox:focus,
@@ -196,19 +188,6 @@
   box-shadow: inset 0 0 0 6px var(--bit-color-accent);
 }
 
-.bit-auto input[type="radio"]:checked:hover,
-.bit-radio:checked:hover {
-  border-color: var(--bit-color-accent);
-  box-shadow: inset 0 0 0 1px var(--bit-color-accent),
-    inset 0 0 0 3px var(--bit-color-bg);
-}
-
-.bit-auto input[type="checkbox"]:checked:hover,
-.bit-checkbox:checked:hover {
-  box-shadow: inset 0 0 0 1px var(--bit-color-accent),
-    inset 0 0 0 3px var(--bit-color-bg), inset 0 0 0 6px var(--bit-color-accent);
-}
-
 .bit-auto input[type="checkbox"]:checked:focus,
 .bit-auto input[type="radio"]:checked:focus,
 .bit-checkbox:checked:focus,
@@ -219,12 +198,8 @@
   outline-offset: -1px;
 }
 
-.bit-auto input[type="checkbox"]:disabled:hover,
-.bit-auto input[type="radio"]:disabled:hover,
 .bit-auto input[type="checkbox"]:disabled,
 .bit-auto input[type="radio"]:disabled,
-.bit-checkbox:disabled:hover,
-.bit-radio:disabled:hover,
 .bit-checkbox:disabled,
 .bit-radio:disabled {
   opacity: 0.5;
@@ -291,15 +266,6 @@
   box-shadow: inset 0 -1px 0 var(--bit-color-fg),
     inset 0 -3px 0 var(--bit-color-shadow);
   border-radius: var(--bit-border-radius);
-}
-
-.bit-auto button:hover,
-.bit-auto input[type="button"]:hover,
-.bit-auto input[type="submit"]:hover,
-.bit-auto input[type="color"]:hover,
-.bit-button:hover {
-  box-shadow: inset 0 0 0 1px var(--bit-color-fg),
-    inset 0 -2px 0 0 var(--bit-color-fg);
 }
 
 .bit-auto button:active,
@@ -389,35 +355,6 @@
   border-radius: var(--bit-border-radius);
 }
 
-.bit-auto select:hover,
-.bit-select:hover {
-  box-shadow: inset 0 0 0 1px var(--bit-color-fg),
-    inset 0 -2px 0 0 var(--bit-color-fg);
-  background: linear-gradient(
-        to bottom,
-        var(--bit-color-accent),
-        var(--bit-color-accent)
-      )
-      calc(100% - var(--_bit-select-handle-gap) - 1px)
-      calc(var(--_bit-select-handle-gap) + 1px) /
-      calc(var(--bit-select-handle-width) - 1px)
-      calc(100% - 2 * var(--_bit-select-handle-gap) - 3px) no-repeat,
-    linear-gradient(to bottom, var(--bit-color-bg), var(--bit-color-bg)) 100% 0 /
-      calc(
-        var(--bit-select-handle-width) + var(--_bit-select-handle-gap) +
-          var(--_bit-select-handle-gap)
-      )
-      calc(100% + 2 * var(--_bit-select-handle-gap)) no-repeat,
-    linear-gradient(to bottom, var(--bit-color-fg), var(--bit-color-fg)) 100% 0 /
-      calc(
-        var(--bit-select-handle-width) + var(--_bit-select-handle-gap) +
-          var(--_bit-select-handle-gap) + 1px
-      )
-      calc(100% + 2 * var(--_bit-select-handle-gap)) no-repeat,
-    linear-gradient(to bottom, var(--bit-color-fg), var(--bit-color-fg)) 0 100% /
-      100% 1px repeat-x var(--bit-color-bg);
-}
-
 .bit-auto select:focus,
 .bit-select:focus {
   outline: 3px solid var(--bit-color-accent);
@@ -474,14 +411,8 @@
   border-radius: var(--bit-border-radius);
 }
 
-.bit-auto a:hover,
-.bit-link:hover {
-  text-decoration: var(--bit-underline-thickness) underline;
-}
-
 .bit-auto a:focus,
 .bit-link:focus {
-  border-radius: var(--bit-border-radius);
   text-decoration: none;
   outline: 2px solid var(--bit-color-accent);
   outline-offset: 2px;
@@ -507,19 +438,6 @@
   box-shadow: inset 0 1px 0 var(--bit-color-fg),
     inset 0 3px 0 var(--bit-color-shadow);
   border-radius: var(--bit-border-radius);
-}
-
-.bit-auto input[type="tel"]:hover,
-.bit-auto input[type="url"]:hover,
-.bit-auto input[type="text"]:hover,
-.bit-auto input[type="email"]:hover,
-.bit-auto input[type="search"]:hover,
-.bit-auto input[type="number"]:hover,
-.bit-auto input[type="password"]:hover,
-.bit-auto textarea:hover,
-.bit-input:hover {
-  box-shadow: inset 0 0 0 1px var(--bit-color-fg),
-    inset 0 2px 0 0 var(--bit-color-fg);
 }
 
 .bit-auto input[type="tel"]:focus,
