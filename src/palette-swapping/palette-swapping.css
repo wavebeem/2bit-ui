@@ -1,0 +1,30 @@
+.bit-root {
+  --bit-color-bg: hsl(340 100% 95%);
+  --bit-color-fg: hsl(340 100% 30%);
+  --bit-color-shadow: hsl(340 80% 80%);
+  --bit-color-accent: hsl(160 100% 24%);
+}
+
+.bit-card {
+  --bit-color-bg: hsl(340 100% 96%);
+  --bit-color-fg: hsl(340 100% 30%);
+  --bit-color-shadow: hsl(340 80% 75%);
+  --bit-color-accent: hsl(160 100% 24%);
+}
+
+.bit-checkbox,
+.bit-radio,
+.bit-input {
+  --bit-color-bg: hsl(340 100% 98%);
+  --bit-color-fg: hsl(340 100% 30%);
+  --bit-color-shadow: hsl(340 80% 90%);
+  --bit-color-accent: hsl(160 100% 24%);
+}
+
+.bit-button,
+.bit-select {
+  --bit-color-bg: hsl(340 100% 96%);
+  --bit-color-fg: hsl(340 100% 30%);
+  --bit-color-shadow: hsl(340 80% 86%);
+  --bit-color-accent: hsl(160 100% 24%);
+}

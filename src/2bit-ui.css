@@ -1,34 +1,56 @@
 .bit-auto,
 .bit-root {
-  --bit-color0: #222323;
-  --bit-color1: #f0f6f0;
+  /* Colors */
+  --bit-color-fg: hsl(22 100% 30%);
+  --bit-color-bg: hsl(22 100% 95%);
+  --bit-color-shadow: hsl(22 80% 80%);
+  --bit-color-accent: hsl(202 100% 30%);
+
+  /* General */
+  --bit-border-radius: 2px;
+  --bit-underline-thickness: 2px;
+
+  /* Button */
   --bit-button-padding-horizontal: 1rem;
   --bit-button-padding-vertical: 0.5rem;
+
+  /* Select */
   --bit-select-padding-horizontal: 1rem;
   --bit-select-padding-vertical: 0.5rem;
+
+  /* Input */
   --bit-input-padding-horizontal: 0.5rem;
   --bit-input-padding-vertical: 0.5rem;
+
+  /* Table */
   --bit-table-padding-horizontal: 1rem;
   --bit-table-padding-vertical: 0.5rem;
+
+  /* Card */
   --bit-card-padding-horizontal: 1rem;
   --bit-card-padding-vertical: 1rem;
-  --bit-box-padding-horizontal: 2px;
-  --bit-box-padding-vertical: 2px;
+
+  /* Box */
+  --bit-box-padding-horizontal: 1px;
+  --bit-box-padding-vertical: 1px;
+
+  /* Fieldset & legend */
   --bit-fieldset-padding-horizontal: 0.5rem;
   --bit-fieldset-padding-vertical: 0.5rem;
   --bit-legend-padding-horizontal: 0.5rem;
   --bit-legend-padding-vertical: 0rem;
+
+  /* Pre & code */
   --bit-pre-padding-horizontal: 1rem;
   --bit-pre-padding-vertical: 1rem;
   --bit-code-padding-horizontal: 0.2em;
   --bit-code-padding-vertical: 0.1em;
+
+  /* Radio buttons & checkboxes */
   --bit-radiocheckbox-size: 1.5em;
-  --bit-border-width: 2px;
-  --bit-underline-thickness: 2px;
-  --bit-border-radius: 0px;
-  --bit-select-handle-width: 1em;
-  background: var(--bit-color1);
-  color: var(--bit-color0);
+
+  background: var(--bit-color-bg);
+  color: var(--bit-color-fg);
 }
 
 /* Checkbox / Radio Button Field Container */
@@ -36,7 +58,7 @@
 .bit-field {
   box-sizing: border-box;
   display: grid;
-  grid-gap: calc(2 * var(--bit-border-width));
+  grid-gap: 2px;
   grid-template-columns: min-content 1fr;
   align-items: center;
 }
@@ -59,14 +81,14 @@
 .bit-auto label > input[type="checkbox"] + *,
 .bit-auto input[type="radio"] + label,
 .bit-auto input[type="checkbox"] + label {
-  padding: calc(2 * var(--bit-border-width));
+  padding: 2px;
   display: inline-block;
   align-self: start;
 }
 
 .bit-auto label > input[type="radio"] + *,
 .bit-auto label > input[type="checkbox"] + * {
-  padding-left: calc(4 * var(--bit-border-width));
+  padding-left: 4px;
 }
 
 /* Checkbox / Radio Button */
@@ -89,65 +111,97 @@
   vertical-align: top;
   box-sizing: border-box;
   -webkit-appearance: none;
+  appearance: none;
   font: inherit;
   width: var(--bit-radiocheckbox-size);
   height: var(--bit-radiocheckbox-size);
-  margin: calc(2 * var(--bit-border-width));
-  background: var(--bit-color1);
-  color: var(--bit-color0);
-  border: var(--bit-border-width) solid var(--bit-color0);
-}
-
-.bit-auto input[type="checkbox"]:hover,
-.bit-auto input[type="radio"]:hover,
-.bit-checkbox:hover,
-.bit-radio:hover {
-  box-shadow: inset 0 0 0 var(--bit-border-width) var(--bit-color0);
+  margin: 2px;
+  background: var(--bit-color-bg);
+  background-clip: padding-box;
+  padding: 2px;
+  color: var(--bit-color-fg);
+  border: 1px solid var(--bit-color-fg);
+  box-shadow: inset 0 1px 0 var(--bit-color-fg),
+    inset 0 3px 0 var(--bit-color-shadow);
 }
 
 .bit-auto input[type="checkbox"]:focus,
 .bit-auto input[type="radio"]:focus,
 .bit-checkbox:focus,
 .bit-radio:focus {
-  outline: 0;
-  box-shadow: 0 0 0 var(--bit-border-width) var(--bit-color1),
-    0 0 0 calc(2 * var(--bit-border-width)) var(--bit-color0),
-    inset 0 0 0 var(--bit-border-width) var(--bit-color1);
+  box-shadow: none;
+  outline: 3px solid var(--bit-color-accent);
+  outline-offset: -1px;
 }
 
 .bit-auto input[type="checkbox"]:checked,
 .bit-auto input[type="radio"]:checked,
 .bit-checkbox:checked,
 .bit-radio:checked {
-  background: var(--bit-color0);
-  box-shadow: inset 0 0 0 calc(2 * var(--bit-border-width)) var(--bit-color1);
+  background: var(--bit-color-accent);
+  box-shadow: inset 0 0 0 6px var(--bit-color-accent);
 }
 
-.bit-auto input[type="checkbox"]:checked:hover,
-.bit-auto input[type="radio"]:checked:hover,
-.bit-checkbox:checked:hover,
-.bit-radio:checked:hover {
-  box-shadow: inset 0 0 0 var(--bit-border-width) var(--bit-color0),
-    inset 0 0 0 calc(2 * var(--bit-border-width)) var(--bit-color1);
+.bit-auto input[type="radio"]:checked,
+.bit-radio:checked {
+  --_bit-radio-blur: 0.25px;
+  box-shadow: none;
+  background-color: var(--bit-color-accent);
+  border-color: var(--bit-color-accent);
+  background-image: radial-gradient(
+    var(--bit-color-bg),
+    var(--bit-color-bg) calc(25% - var(--_bit-radio-blur)),
+    var(--bit-color-accent) calc(25% + var(--_bit-radio-blur)),
+    var(--bit-color-accent)
+  );
+}
+
+.bit-auto input[type="checkbox"]:checked,
+.bit-checkbox:checked {
+  --_bit-checkbox-blur: 0.5px;
+  --_bit-checkbox-size: 0.125em;
+  --_bit-checkbox-start: calc(50% - 0.5 * var(--_bit-checkbox-size));
+  --_bit-checkbox-end: calc(
+    var(--_bit-checkbox-start) + var(--_bit-checkbox-size)
+  );
+  border-color: var(--bit-color-accent);
+  background-color: var(--bit-color-accent);
+  background-image: linear-gradient(
+      45deg,
+      transparent,
+      transparent calc(var(--_bit-checkbox-start) - var(--_bit-checkbox-blur)),
+      var(--bit-color-bg) var(--_bit-checkbox-start),
+      var(--bit-color-bg) var(--_bit-checkbox-end),
+      transparent calc(var(--_bit-checkbox-end) + var(--_bit-checkbox-blur)),
+      transparent
+    ),
+    linear-gradient(
+      -45deg,
+      transparent,
+      transparent calc(var(--_bit-checkbox-start) - var(--_bit-checkbox-blur)),
+      var(--bit-color-bg) var(--_bit-checkbox-start),
+      var(--bit-color-bg) var(--_bit-checkbox-end),
+      transparent calc(var(--_bit-checkbox-end) + var(--_bit-checkbox-blur)),
+      transparent
+    );
+  box-shadow: inset 0 0 0 6px var(--bit-color-accent);
 }
 
 .bit-auto input[type="checkbox"]:checked:focus,
 .bit-auto input[type="radio"]:checked:focus,
 .bit-checkbox:checked:focus,
 .bit-radio:checked:focus {
-  box-shadow: 0 0 0 var(--bit-border-width) var(--bit-color1),
-    0 0 0 calc(2 * var(--bit-border-width)) var(--bit-color0),
-    inset 0 0 0 calc(2 * var(--bit-border-width)) var(--bit-color1);
+  box-shadow: inset 0 0 0 2px var(--bit-color-bg),
+    inset 0 0 0 6px var(--bit-color-accent);
+  outline: 3px solid var(--bit-color-accent);
+  outline-offset: -1px;
 }
 
-.bit-auto input[type="checkbox"]:disabled:hover,
-.bit-auto input[type="radio"]:disabled:hover,
 .bit-auto input[type="checkbox"]:disabled,
 .bit-auto input[type="radio"]:disabled,
-.bit-checkbox:disabled:hover,
-.bit-radio:disabled:hover,
 .bit-checkbox:disabled,
 .bit-radio:disabled {
+  background: transparent;
   opacity: 0.5;
   border-style: dotted;
   box-shadow: none;
@@ -158,8 +212,8 @@
 .bit-auto table,
 .bit-table {
   box-sizing: border-box;
-  background: var(--bit-color1);
-  color: var(--bit-color0);
+  background: var(--bit-color-bg);
+  color: var(--bit-color-fg);
   border-collapse: collapse;
 }
 
@@ -169,29 +223,29 @@
   text-align: left;
 }
 
-.bit-auto table tbody tr,
-.bit-table tbody tr {
-  border-top: calc(0.5 * var(--bit-border-width)) solid var(--bit-color0);
+.bit-auto table tbody tr:not(:last-of-type),
+.bit-table tbody tr:not(:last-of-type) {
+  border-bottom: 1px solid var(--bit-color-shadow);
 }
 
 .bit-auto table th,
 .bit-auto table td,
 .bit-table th,
 .bit-table td {
-  background: var(--bit-color1);
-  color: var(--bit-color0);
+  background: var(--bit-color-bg);
+  color: var(--bit-color-fg);
   padding: var(--bit-table-padding-vertical) var(--bit-table-padding-horizontal);
 }
 
 .bit-auto table thead,
 .bit-table thead {
   border-top: 0;
-  border-bottom: var(--bit-border-width) solid var(--bit-color0);
+  border-bottom: 1px solid var(--bit-color-fg);
 }
 
 .bit-auto table tfoot,
 .bit-table tfoot {
-  border-top: var(--bit-border-width) solid var(--bit-color0);
+  border-top: 1px solid var(--bit-color-fg);
   border-bottom: 0;
 }
 
@@ -203,22 +257,15 @@
 .bit-auto input[type="color"],
 .bit-button {
   box-sizing: border-box;
-  background: var(--bit-color1);
-  color: var(--bit-color0);
+  background: var(--bit-color-bg);
+  color: var(--bit-color-fg);
   padding: var(--bit-button-padding-vertical)
     var(--bit-button-padding-horizontal);
   font: inherit;
-  border: var(--bit-border-width) solid var(--bit-color0);
-  box-shadow: inset 0 calc(-1 * var(--bit-border-width)) 0 var(--bit-color0);
+  border: 1px solid var(--bit-color-fg);
+  box-shadow: inset 0 -1px 0 var(--bit-color-fg),
+    inset 0 -3px 0 var(--bit-color-shadow);
   border-radius: var(--bit-border-radius);
-}
-
-.bit-auto button:hover,
-.bit-auto input[type="button"]:hover,
-.bit-auto input[type="submit"]:hover,
-.bit-auto input[type="color"]:hover,
-.bit-button:hover {
-  box-shadow: inset 0 0 0 var(--bit-border-width) var(--bit-color0);
 }
 
 .bit-auto button:active,
@@ -226,7 +273,7 @@
 .bit-auto input[type="submit"]:active,
 .bit-auto input[type="color"]:active,
 .bit-button:active {
-  transform: translateY(var(--bit-border-width));
+  transform: translateY(1px);
 }
 
 .bit-auto button:focus,
@@ -234,11 +281,9 @@
 .bit-auto input[type="submit"]:focus,
 .bit-auto input[type="color"]:focus,
 .bit-button:focus {
-  outline: none;
-  border-color: var(--bit-color1);
-  box-shadow: inset 0 0 0 var(--bit-border-width) var(--bit-color0),
-    0 0 0 var(--bit-border-width) var(--bit-color0),
-    inset 0 calc(-2 * var(--bit-border-width)) 0 var(--bit-color0);
+  outline: 3px solid var(--bit-color-accent);
+  outline-offset: -2px;
+  box-shadow: none;
 }
 
 .bit-auto button:disabled,
@@ -246,10 +291,11 @@
 .bit-auto input[type="submit"]:disabled,
 .bit-auto input[type="color"]:disabled,
 .bit-button:disabled {
+  background: transparent;
   transform: none;
   opacity: 0.5;
   box-shadow: none;
-  border-color: var(--bit-color0);
+  border-color: var(--bit-color-fg);
   border-style: dotted;
 }
 
@@ -257,102 +303,88 @@
 
 .bit-auto select,
 .bit-select {
+  --_bit-select-blur: 0.5px;
+  --_bit-select-handle-thickness: 4px;
+  --_bit-select-handle-width: 1rem;
   box-sizing: border-box;
   -webkit-appearance: none;
-  background: var(--bit-color1);
-  color: var(--bit-color0);
+  appearance: none;
+  color: var(--bit-color-fg);
+  background-color: var(--bit-color-bg);
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+      -45deg,
+      transparent 50%,
+      var(--bit-color-bg) calc(50% + var(--_bit-select-blur))
+    ),
+    linear-gradient(
+      45deg,
+      transparent 50%,
+      var(--bit-color-bg) calc(50% + var(--_bit-select-blur))
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 50%,
+      var(--bit-color-fg) calc(50% + var(--_bit-select-blur))
+    ),
+    linear-gradient(
+      45deg,
+      transparent 50%,
+      var(--bit-color-fg) calc(50% + var(--_bit-select-blur))
+    );
+  background-position: calc(100% - 0.5rem)
+      calc(50% - var(--_bit-select-handle-thickness)),
+    calc(100% - 1rem) calc(50% - var(--_bit-select-handle-thickness)),
+    calc(100% - 0.5rem) 50%, calc(100% - 1rem) 50%;
+  background-size: 0.5rem 0.5rem;
+  box-shadow: inset 0 -1px 0 var(--bit-color-fg),
+    inset 0 -3px 0 var(--bit-color-shadow);
   padding: var(--bit-select-padding-vertical)
     var(--bit-select-padding-horizontal);
   padding-right: calc(
-    var(--bit-select-padding-horizontal) + var(--bit-select-handle-width)
+    var(--bit-select-padding-horizontal) + var(--_bit-select-handle-width)
   );
   font: inherit;
-  border: var(--bit-border-width) solid var(--bit-color0);
+  border: 1px solid var(--bit-color-fg);
   border-radius: var(--bit-border-radius);
-  box-shadow: inset 0 calc(-1 * var(--bit-border-width)) 0 0 var(--bit-color1),
-    inset 0 var(--bit-border-width) 0 0 var(--bit-color1),
-    inset calc(-1 * var(--bit-border-width)) 0 0 0 var(--bit-color1),
-    inset calc(-1 * var(--bit-select-handle-width)) 0 0 0 var(--bit-color0),
-    inset
-      calc(-1 * var(--bit-select-handle-width) + -1 * var(--bit-border-width)) 0
-      0 0 var(--bit-color1);
-}
-
-.bit-auto select:hover,
-.bit-select:hover {
-  box-shadow: inset 0 0 0 var(--bit-border-width) var(--bit-color0),
-    inset 0 calc(-2 * var(--bit-border-width)) 0 0 var(--bit-color1),
-    inset 0 calc(2 * var(--bit-border-width)) 0 0 var(--bit-color1),
-    inset calc(-2 * var(--bit-border-width)) 0 0 0 var(--bit-color1),
-    inset calc(-1 * var(--bit-select-handle-width)) 0 0 0 var(--bit-color0),
-    inset
-      calc(-1 * var(--bit-select-handle-width) + -1 * var(--bit-border-width)) 0
-      0 0 var(--bit-color1);
 }
 
 .bit-auto select:focus,
 .bit-select:focus {
-  outline: none;
-  border-color: var(--bit-color1);
-  box-shadow: inset 0 0 0 var(--bit-border-width) var(--bit-color0),
-    inset 0 calc(-2 * var(--bit-border-width)) 0 0 var(--bit-color1),
-    inset 0 calc(2 * var(--bit-border-width)) 0 0 var(--bit-color1),
-    inset calc(-2 * var(--bit-border-width)) 0 0 0 var(--bit-color1),
-    inset calc(-1 * var(--bit-select-handle-width)) 0 0 0 var(--bit-color0),
-    inset
-      calc(-1 * var(--bit-select-handle-width) + -1 * var(--bit-border-width)) 0
-      0 0 var(--bit-color1),
-    0 0 0 var(--bit-border-width) var(--bit-color0);
+  outline: 3px solid var(--bit-color-accent);
+  outline-offset: -2px;
+  box-shadow: none;
 }
 
 .bit-auto select:-moz-focusring,
 .bit-select:-moz-focusring {
   color: transparent;
-  text-shadow: 0 0 0 var(--bit-color0);
+  text-shadow: 0 0 0 var(--bit-color-fg);
 }
 
 .bit-auto select:disabled,
 .bit-select:disabled {
+  background: transparent;
   opacity: 0.5;
-  border-color: var(--bit-color0);
+  border-color: var(--bit-color-fg);
   border-style: dotted;
-  box-shadow: inset 0 calc(-1 * var(--bit-border-width)) 0 0 var(--bit-color1),
-    inset 0 calc(1 * var(--bit-border-width)) 0 0 var(--bit-color1),
-    inset calc(-1 * var(--bit-border-width)) 0 0 0 var(--bit-color1),
-    inset calc(-1 * var(--bit-select-handle-width)) 0 0 0 var(--bit-color0),
-    inset
-      calc(-1 * var(--bit-select-handle-width) + -1 * var(--bit-border-width)) 0
-      0 0 var(--bit-color1);
+  box-shadow: none;
 }
 
 /* Link */
 
 .bit-auto a,
 .bit-link {
-  color: var(--bit-color0);
-  text-decoration: underline;
+  color: var(--bit-color-accent);
+  text-decoration: var(--bit-underline-thickness) underline;
   border-radius: var(--bit-border-radius);
-  text-decoration-thickness: var(--bit-underline-thickness);
-}
-
-.bit-auto a:hover,
-.bit-link:hover {
-  border-radius: var(--bit-border-radius);
-  background: var(--bit-color1);
-  text-decoration: none;
-  outline: var(--bit-border-width) solid var(--bit-color0);
-  outline-offset: var(--bit-border-width);
 }
 
 .bit-auto a:focus,
 .bit-link:focus {
-  border-radius: var(--bit-border-radius);
-  background: var(--bit-color0);
-  color: var(--bit-color1);
   text-decoration: none;
-  outline: none;
-  outline: calc(3 * var(--bit-border-width)) double var(--bit-color0);
-  outline-offset: 0;
+  outline: 2px solid var(--bit-color-accent);
+  outline-offset: 2px;
 }
 
 /* Input / Text Area */
@@ -367,25 +399,14 @@
 .bit-auto textarea,
 .bit-input {
   box-sizing: border-box;
-  background: var(--bit-color1);
-  color: var(--bit-color0);
+  background: var(--bit-color-bg);
+  color: var(--bit-color-fg);
   font: inherit;
   padding: var(--bit-input-padding-vertical) var(--bit-input-padding-horizontal);
-  border: var(--bit-border-width) solid var(--bit-color0);
-  box-shadow: inset 0 var(--bit-border-width) 0 var(--bit-color0);
+  border: 1px solid var(--bit-color-fg);
+  box-shadow: inset 0 1px 0 var(--bit-color-fg),
+    inset 0 3px 0 var(--bit-color-shadow);
   border-radius: var(--bit-border-radius);
-}
-
-.bit-auto input[type="tel"]:hover,
-.bit-auto input[type="url"]:hover,
-.bit-auto input[type="text"]:hover,
-.bit-auto input[type="email"]:hover,
-.bit-auto input[type="search"]:hover,
-.bit-auto input[type="number"]:hover,
-.bit-auto input[type="password"]:hover,
-.bit-auto textarea:hover,
-.bit-input:hover {
-  box-shadow: inset 0 0 0 var(--bit-border-width) var(--bit-color0);
 }
 
 .bit-auto input[type="tel"]:focus,
@@ -397,11 +418,9 @@
 .bit-auto input[type="password"]:focus,
 .bit-auto textarea:focus,
 .bit-input:focus {
-  outline: none;
-  border-color: var(--bit-color1);
-  box-shadow: inset 0 0 0 var(--bit-border-width) var(--bit-color0),
-    0 0 0 var(--bit-border-width) var(--bit-color0),
-    inset 0 calc(2 * var(--bit-border-width)) 0 var(--bit-color0);
+  outline: 3px solid var(--bit-color-accent);
+  outline-offset: -2px;
+  box-shadow: none;
 }
 
 .bit-auto input[type="tel"]:disabled,
@@ -413,9 +432,10 @@
 .bit-auto input[type="password"]:disabled,
 .bit-auto textarea:disabled,
 .bit-input:disabled {
+  background: transparent;
   opacity: 0.5;
   box-shadow: none;
-  border-color: var(--bit-color0);
+  border-color: var(--bit-color-fg);
   border-style: dotted;
 }
 
@@ -428,7 +448,7 @@
 .bit-auto input[type="password"]::placeholder,
 .bit-auto textarea::placeholder,
 .bit-input::placeholder {
-  color: var(--bit-color0);
+  color: var(--bit-color-fg);
   opacity: 0.5;
 }
 
@@ -441,15 +461,15 @@
 .bit-auto input[type="password"]::selection,
 .bit-auto textarea::selection,
 .bit-input::selection {
-  background: var(--bit-color0);
-  color: var(--bit-color1);
+  background: var(--bit-color-fg);
+  color: var(--bit-color-bg);
 }
 
 /* Fieldset and legend */
 
 .bit-auto fieldset,
 .bit-fieldset {
-  border: var(--bit-border-width) solid var(--bit-color0);
+  border: 1px solid var(--bit-color-shadow);
   padding: var(--bit-fieldset-padding-vertical)
     var(--bit-fieldset-padding-horizontal);
   margin: 0;
@@ -458,7 +478,7 @@
 
 .bit-auto legend,
 .bit-legend {
-  border: var(--bit-border-width) solid var(--bit-color0);
+  border: 1px solid var(--bit-color-shadow);
   padding: var(--bit-legend-padding-vertical)
     var(--bit-legend-padding-horizontal);
   margin: 0;
@@ -480,39 +500,38 @@
 
 .bit-card {
   box-sizing: border-box;
-  background: var(--bit-color1);
-  color: var(--bit-color0);
-  border: calc(3 * var(--bit-border-width)) double var(--bit-color0);
+  background: var(--bit-color-bg);
+  color: var(--bit-color-fg);
+  border: 1px solid var(--bit-color-shadow);
   padding: var(--bit-card-padding-vertical) var(--bit-card-padding-horizontal);
-  box-shadow: inset 0 var(--bit-border-width) 0 0 var(--bit-color0),
-    0 var(--bit-border-width) 0 0 var(--bit-color0);
+  box-shadow: 0 1px 0 0 var(--bit-color-shadow);
   border-radius: var(--bit-border-radius);
 }
 
 .bit-box {
   box-sizing: border-box;
-  background: var(--bit-color1);
-  color: var(--bit-color0);
-  border: var(--bit-border-width) solid var(--bit-color0);
+  background: var(--bit-color-bg);
+  color: var(--bit-color-fg);
+  border: 1px solid var(--bit-color-shadow);
   padding: var(--bit-box-padding-vertical) var(--bit-box-padding-horizontal);
   border-radius: var(--bit-border-radius);
 }
 
 .bit-auto,
 .bit-scrollbar {
-  scrollbar-color: var(--bit-color0) var(--bit-color1);
+  scrollbar-color: var(--bit-color-fg) var(--bit-color-bg);
 }
 
 .bit-svg {
-  fill: var(--bit-color0);
+  fill: var(--bit-color-fg);
 }
 
 .bit-auto :not(pre) > code,
 .bit-auto kbd,
 .bit-auto samp,
 .bit-code {
-  background: var(--bit-color0);
-  color: var(--bit-color1);
+  background: var(--bit-color-fg);
+  color: var(--bit-color-bg);
   padding: var(--bit-code-padding-vertical) var(--bit-code-padding-horizontal);
   border-radius: var(--bit-border-radius);
 }
@@ -521,15 +540,15 @@
 .bit-hr {
   box-sizing: border-box;
   border: 0;
-  border-top: var(--bit-border-width) dotted var(--bit-color0);
+  border-top: 1px solid var(--bit-color-shadow);
 }
 
 .bit-auto pre,
 .bit-pre {
   box-sizing: border-box;
-  background: var(--bit-color0);
-  color: var(--bit-color1);
-  scrollbar-color: var(--bit-color1) var(--bit-color0);
+  background: var(--bit-color-fg);
+  color: var(--bit-color-bg);
+  scrollbar-color: var(--bit-color-bg) var(--bit-color-fg);
   overflow-x: auto;
   padding: var(--bit-pre-padding-vertical) var(--bit-pre-padding-horizontal);
   border-radius: var(--bit-border-radius);

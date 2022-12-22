@@ -3,199 +3,253 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1bit-ui</title>
+    <title>2bit-ui</title>
     <link rel="icon" sizes="16x16" href="/favicon-16.png" />
     <link rel="icon" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
     <link rel="manifest" href="/manifest.json" />
-    <link rel="stylesheet" href="/1bit-ui.css" />
+    <link rel="stylesheet" href="/2bit-ui.css" />
     <link rel="stylesheet" href="/site.css" />
-    <script type="module" src="/load-theme.js"></script>
-    <script type="module" src="theme.js"></script>
+    <script type="module" src="/index.js"></script>
     <script
       async
       defer
-      data-domain="1bit-ui.wavebeem.com"
+      data-domain="2bit-ui.wavebeem.com"
       src="https://plausible.io/js/plausible.js"
     ></script>
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@wavebeem" />
     <meta name="twitter:creator" content="@wavebeem" />
-    <meta name="og:title" content="1bit-ui" />
+    <meta name="og:title" content="2bit-ui" />
     <meta
       name="og:description"
-      content="A CSS library for 1-bit inspired design"
+      content="A CSS library for 2-bit inspired design"
     />
     <meta
       name="og:image"
-      content="https://1bit-ui.wavebeem.com/favicon-512.png"
+      content="https://2bit-ui.wavebeem.com/favicon-512.png"
     />
   </head>
   <body>
-    <h1><span class="bit-code">1bit-ui</span></h1>
+    <site-theme-loader></site-theme-loader>
 
-    <nav class="bit-card">
-      <ul class="site-nav-menu">
-        <li><a href="/" class="bit-link">Home</a></li>
-        <li><a href="/docs/" class="bit-link">Documentation</a></li>
-        <li><a href="/examples/" class="bit-link">Examples</a></li>
-      </ul>
-    </nav>
+    <h1><span class="bit-code">2bit-ui</span></h1>
+
+    <site-nav></site-nav>
 
     <h2>Introduction</h2>
 
     <p>
-      1bit-ui is a small CSS library for making retro-inspired web pages using
-      two colors. Its color palette is completely customizable using CSS Custom
-      Properties (or CSS Variables).
+      2bit-ui is a small CSS library for making retro-inspired web pages using
+      four colors. Its color palette is completely customizable using CSS Custom
+      Properties.
     </p>
 
-    <h2>1bit-ui Examples</h2>
-    <p>Click the buttons to see 1bit-ui in action.</p>
+    <h2>2bit-ui Examples</h2>
+    <p>Click the buttons to see 2bit-ui in action.</p>
     <theme-switchers>
+      <button data-theme-switcher class="bit-button">Default</button>
       <button
         data-theme-switcher
-        data-bit-theme0="#000000"
-        data-bit-theme1="#ffffff"
+        data-bit-color-fg="hsl(160 75% 20%)"
+        data-bit-color-bg="hsl(160 30% 94%)"
+        data-bit-color-shadow="hsl(160 30% 65%)"
+        data-bit-color-accent="hsl(310 95% 35%)"
+        class="bit-button"
+      >
+        Nature
+      </button>
+      <button
+        data-theme-switcher
+        data-bit-color-fg="hsl(240 75% 20%)"
+        data-bit-color-bg="hsl(240 30% 94%)"
+        data-bit-color-shadow="hsl(240 30% 65%)"
+        data-bit-color-accent="hsl(110 60% 30%)"
+        class="bit-button"
+      >
+        Periwinkle
+      </button>
+      <button
+        data-theme-switcher
+        data-bit-color-fg="hsl(300 75% 20%)"
+        data-bit-color-bg="hsl(300 30% 94%)"
+        data-bit-color-shadow="hsl(300 30% 65%)"
+        data-bit-color-accent="hsl(180 55% 30%)"
+        class="bit-button"
+      >
+        Bubble Gum
+      </button>
+      <button
+        data-theme-switcher
+        data-bit-color-fg="#000000"
+        data-bit-color-bg="#ffffff"
+        data-bit-color-shadow="#cccccc"
+        data-bit-color-accent="#0000ff"
         class="bit-button"
       >
         White
       </button>
       <button
         data-theme-switcher
-        data-bit-theme0="#666666"
-        data-bit-theme1="#eeeeee"
+        data-bit-color-fg="#333333"
+        data-bit-color-bg="#eeeeee"
+        data-bit-color-shadow="#cccccc"
+        data-bit-color-accent="#cc0000"
         class="bit-button"
       >
-        Ghost
+        Gray
       </button>
       <button
         data-theme-switcher
-        data-bit-theme0="#a52a2a"
-        data-bit-theme1="#ffebcd"
+        data-bit-color-fg="#161616"
+        data-bit-color-bg="#f0f0f0"
+        data-bit-color-shadow="#8f9bf6"
+        data-bit-color-accent="#ab4646"
         class="bit-button"
       >
-        Warm
+        Bicycle
       </button>
       <button
         data-theme-switcher
-        data-bit-theme0="#ffffff"
-        data-bit-theme1="#000000"
+        data-bit-color-fg="hsl(74 32% 25%)"
+        data-bit-color-bg="hsl(74 32% 72%)"
+        data-bit-color-shadow="hsl(74 32% 62%)"
+        data-bit-color-accent="hsl(74 100% 5%)"
         class="bit-button"
       >
-        Black
+        Retro Boy
       </button>
       <button
         data-theme-switcher
-        data-bit-theme0="#777777"
-        data-bit-theme1="#000000"
-        class="bit-button"
-      >
-        Night
-      </button>
-      <button
-        data-theme-switcher
-        data-bit-theme0="#cccccc"
-        data-bit-theme1="#333333"
+        data-bit-color-fg="#cccccc"
+        data-bit-color-bg="#333333"
+        data-bit-color-shadow="#666666"
+        data-bit-color-accent="#00ffcc"
         class="bit-button"
       >
         Dark
       </button>
       <button
         data-theme-switcher
-        data-bit-theme0="#eacda8"
-        data-bit-theme1="#2d2020"
+        data-bit-color-fg="#ffffff"
+        data-bit-color-bg="#000000"
+        data-bit-color-shadow="#666666"
+        data-bit-color-accent="#00ffff"
         class="bit-button"
       >
-        Bark
+        Black
       </button>
       <button
         data-theme-switcher
-        data-bit-theme0="#fcffcc"
-        data-bit-theme1="#0a2e44"
+        data-bit-color-fg="#f4a"
+        data-bit-color-bg="#204"
+        data-bit-color-shadow="#64a"
+        data-bit-color-accent="#4dd"
         class="bit-button"
       >
-        Starboard
+        Neon
       </button>
       <button
         data-theme-switcher
-        data-bit-theme0="#3e232c"
-        data-bit-theme1="#edf6d6"
+        data-bit-color-fg="hsl(25 100% 40%)"
+        data-bit-color-bg="hsl(25 100% 5%)"
+        data-bit-color-shadow="hsl(25 100% 20%)"
+        data-bit-color-accent="hsl(25 100% 50%)"
         class="bit-button"
       >
-        Pixel Ink
+        Amber
       </button>
       <button
         data-theme-switcher
-        data-bit-theme0="#edf6d6"
-        data-bit-theme1="#3e232c"
+        data-bit-color-fg="#0aa"
+        data-bit-color-bg="#022"
+        data-bit-color-shadow="#044"
+        data-bit-color-accent="#0ff"
         class="bit-button"
       >
-        Pixel Ink
+        Cyber
       </button>
       <button
         data-theme-switcher
-        data-bit-theme0="#222323"
-        data-bit-theme1="#f0f6f0"
+        data-bit-color-fg="#0a0"
+        data-bit-color-bg="#020"
+        data-bit-color-shadow="#040"
+        data-bit-color-accent="#0f0"
         class="bit-button"
       >
-        1bit Monitor Glow
+        Vector
       </button>
       <button
         data-theme-switcher
-        data-bit-theme0="#f0f6f0"
-        data-bit-theme1="#222323"
+        data-bit-color-fg="#eb0000"
+        data-bit-color-bg="#000000"
+        data-bit-color-shadow="#880000"
+        data-bit-color-accent="#ff0000"
         class="bit-button"
       >
-        1bit Monitor Glow
+        Virtual Girl
       </button>
     </theme-switchers>
 
+    <ul class="site-list">
+      <li>
+        Retro Boy based on Dirty Boy by
+        <a class="bit-link" href="https://twitter.com/WildLeoKnight"
+          >@WildLeoKnight</a
+        >
+      </li>
+
+      <li>
+        <a class="bit-link" href="https://lospec.com/palette-list/bicycle"
+          >Bicycle</a
+        >
+        by <a href="https://lospec.com/braquen" class="bit-link">Braquen</a>
+      </li>
+    </ul>
+
     <h2>More Detail</h2>
     <p>
-      You can use 1bit-ui with basic form fields and other elements. 1bit-ui
+      You can use 2bit-ui with basic form fields and other elements. 2bit-ui
       requires the use of CSS classes, so it won't clash with your existing CSS.
-      1bit-ui also uses the lowest specificity for each rule, making it much
+      2bit-ui also uses relatively low specificity for each rule, making it much
       less likely to override your existing CSS.
     </p>
     <p>
-      1bit-ui is about 15 KB of unminified CSS and compresses to about 2.5 KB
+      2bit-ui is about 18 KB of unminified CSS and compresses to about 2.6 KB
       via gzip compression.
     </p>
 
     <h2>Standard Installation</h2>
     <p>
       Download
-      <a href="https://unpkg.com/1bit-ui/dist/1bit-ui.css" class="bit-link"
-        >1-bit-ui.css</a
-      >
+      <a download href="/2bit-ui.css" class="bit-link">2bit-ui.css</a>
       and use a <code class="bit-code">link</code> tag:
     </p>
     <pre class="bit-pre">
-&lt;link rel="stylesheet" href="1bit-ui.css" /&gt;</pre
+&lt;link rel="stylesheet" href="2bit-ui.css" /&gt;</pre
     >
 
     <h2>Webpack Installation</h2>
+
     <p>
       If you're using
       <a href="https://webpack.js.org/loaders/css-loader/" class="bit-link"
         >webpack with css-loader</a
       >, you can install it through npm:
     </p>
-    <pre class="bit-pre">npm install 1bit-ui</pre>
+
+    <pre class="bit-pre">npm install 2bit-ui</pre>
+
     <p>Then load the CSS through your JavaScript:</p>
-    <pre class="bit-pre">import "1bit-ui/dist/1bit-ui.css";</pre>
+
+    <pre class="bit-pre">import "2bit-ui";</pre>
 
     <p>
-      To use one of the custom themes at the top, add the following CSS to your
-      page:
+      To use one of the custom themes above, add the following CSS to your page:
     </p>
 
     <pre id="theme-example" class="bit-pre"></pre>
 
-    <footer>
-      &copy; 2020
-      <a href="https://www.mockbrian.com" class="bit-link">Brian Mock</a>
-    </footer>
+    <site-footer></site-footer>
   </body>
 </html>

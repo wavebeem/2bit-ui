@@ -3,59 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Documentation | 1bit-ui</title>
+    <title>Documentation | 2bit-ui</title>
     <link rel="icon" sizes="16x16" href="/favicon-16.png" />
     <link rel="icon" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
     <link rel="manifest" href="/manifest.json" />
-    <link rel="stylesheet" href="/1bit-ui.css" />
+    <link rel="stylesheet" href="/2bit-ui.css" />
     <link rel="stylesheet" href="/site.css" />
-    <script type="module" src="/load-theme.js"></script>
+    <script type="module" src="/index.js"></script>
     <script type="module" src="docs.js"></script>
     <script
       async
       defer
-      data-domain="1bit-ui.wavebeem.com"
+      data-domain="2bit-ui.wavebeem.com"
       src="https://plausible.io/js/plausible.js"
     ></script>
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@wavebeem" />
     <meta name="twitter:creator" content="@wavebeem" />
-    <meta name="og:title" content="1bit-ui" />
+    <meta name="og:title" content="2bit-ui" />
     <meta
       name="og:description"
-      content="A CSS library for 1-bit inspired design"
+      content="A CSS library for 2-bit inspired design"
     />
     <meta
       name="og:image"
-      content="https://1bit-ui.wavebeem.com/favicon-512.png"
+      content="https://2bit-ui.wavebeem.com/favicon-512.png"
     />
   </head>
   <body>
-    <h1><span class="bit-code">1bit-ui</span></h1>
+    <site-theme-loader></site-theme-loader>
 
-    <nav class="bit-card">
-      <ul class="site-nav-menu">
-        <li><a href="/" class="bit-link">Home</a></li>
-        <li><a href="/docs/" class="bit-link">Documentation</a></li>
-        <li><a href="/examples/" class="bit-link">Examples</a></li>
-      </ul>
-    </nav>
-    <table-of-contents></table-of-contents>
+    <h1><span class="bit-code">2bit-ui</span></h1>
+
+    <site-nav></site-nav>
+
+    <site-toc></site-toc>
 
     <h2>Introduction</h2>
 
     <p>
-      This page demonstrates some of the ways 1bit-ui can be used, as well as
+      This page demonstrates some of the ways 2bit-ui can be used, as well as
       code for its examples.
     </p>
 
     <h2 id="basics">Basics</h2>
     <p>
-      All CSS classes from 1bit-ui start with
-      <code class="bit-code">.bit-</code>. This way you'll always know when
-      you're using 1bit-ui CSS. 1bit-ui uses the lowest CSS specificity
-      possible, if you need to override it.
+      All CSS classes from 2bit-ui start with
+      <code class="bit-code">bit-</code>. This way you'll always know when
+      you're using 2bit-ui CSS.
     </p>
 
     <p>
@@ -65,10 +61,12 @@
 
     <custom-properties-editor
       data-properties="
-        --bit-color0
-        --bit-color1
-        --bit-border-width
+        --bit-color-bg
+        --bit-color-fg
+        --bit-color-shadow
+        --bit-color-accent
         --bit-border-radius
+        --bit-underline-thickness
       "
     ></custom-properties-editor>
 
@@ -80,9 +78,6 @@
       about to click a link.
     </p>
 
-    <!-- I was trying to think of an alternative to lorem ipsum. As it is, I think
-you may have about two sentences more than you need. SK -->
-
     <inject-example data-example="link"></inject-example>
 
     <h2 id="selects">Selects</h2>
@@ -90,7 +85,6 @@ you may have about two sentences more than you need. SK -->
       data-properties="
         --bit-select-padding-horizontal
         --bit-select-padding-vertical
-        --bit-select-handle-width
       "
       data-example="select"
     ></inject-example>
@@ -119,7 +113,8 @@ you may have about two sentences more than you need. SK -->
       <code class="bit-code">bit-field</code> and put a
       <code class="bit-code">label</code> after it with correct
       <code class="bit-code">id</code> and
-      <code class="bit-code">for</code>attributes
+      <code class="bit-code">for</code> attributes (or nest the radio button
+      inside a label)
     </p>
     <inject-example
       data-properties="--bit-radiocheckbox-size"
@@ -132,7 +127,8 @@ you may have about two sentences more than you need. SK -->
       <code class="bit-code">bit-field</code> and put a
       <code class="bit-code">label</code> after it with correct
       <code class="bit-code">id</code> and
-      <code class="bit-code">for</code>attributes
+      <code class="bit-code">for</code> attributes (or nest the checkbox inside
+      a label)
     </p>
     <inject-example
       data-properties="--bit-radiocheckbox-size"
@@ -206,8 +202,8 @@ you may have about two sentences more than you need. SK -->
     <p>
       Using the CSS class <code class="bit-code">bit-svg</code> will set the
       <code class="bit-code">fill</code> property to
-      <code class="bit-code">--bit-color0</code>, causing inline SVGs to
-      automatically match your 1bit-ui theme.
+      <code class="bit-code">--bit-color-fg</code>, causing inline SVGs to
+      automatically match your 2bit-ui theme.
     </p>
     <inject-example data-example="inlineSVG"></inject-example>
 
@@ -248,62 +244,47 @@ you may have about two sentences more than you need. SK -->
       besides Firefox will implement this feature.
     </p>
 
-    <h2 id="creative">Get Creative!</h2>
-    <p>
-      CSS Custom Properties can be changed on your page at any time! You can use
-      JavaScript, or even CSS selectors to do it! You could apply a
-      <code class="bit-code">:focus</code> style to change
-      <code class="bit-code">--bit-color0</code> and
-      <code class="bit-code">--bit-color1</code> to different colors to make the
-      focus state easier to read.
-    </p>
-    <p>
-      Or if you have a super dangerous delete button, you could force the color
-      to be red so it stands out against your normal color scheme. 1bit-ui
-      encourages your creativity.
-    </p>
-    <inject-example
-      class="site-example"
-      data-example="getCreative"
-    ></inject-example>
-
     <h2 id="dark">Dark Mode</h2>
     <p>
       You can use the
       <code class="bit-code">prefers-color-scheme: dark</code> CSS media query
-      to set the <code class="bit-code">--bit-color0</code> and
-      <code class="bit-code">--bit-color1</code> variables, allowing your users
-      to automatically get Dark Mode with a single block of CSS
+      to set the <code class="bit-code">--bit-color-*</code> variables, allowing
+      your visitors to automatically get dark mode with a single block of CSS
     </p>
     <pre class="bit-pre">
 .bit-auto,
 .bit-root {
-  --bit-color0: white;
-  --bit-color1: black;
+  --bit-color-bg: #fff;
+  --bit-color-fg: #333;
+  --bit-color-shadow: #666;
+  --bit-color-accent: #c00;
 }
 
 @media (prefers-color-scheme: dark) {
   .bit-auto,
   .bit-root {
-    --bit-color0: white;
-    --bit-color1: black;
+    --bit-color-bg: #333;
+    --bit-color-fg: #ccc;
+    --bit-color-shadow: #666;
+    --bit-color-accent: #0dd;
   }
 }</pre
     >
 
-    <h2 id="round">Rounded Corners</h2>
+    <h2 id="sharp">Sharp Corners</h2>
     <p>
-      Sharp edges not your thing? You can customize that. CSS Custom Properties
-      are inherited, so you can apply this to your whole page by setting
+      Rounded edges not your thing? You can customize that. CSS Custom
+      Properties are inherited, so you can apply this to your whole page by
+      setting
       <code class="bit-code">--bit-border-radius</code> on any element you want
       through CSS or even inline styles.
     </p>
-    <inject-example class="site-example" data-example="round"></inject-example>
+    <inject-example class="site-example" data-example="sharp"></inject-example>
 
     <h2 id="auto-mode">Auto Mode</h2>
 
     <p>
-      The suggested way to use <code class="bit-code">1bit-ui</code> is
+      The suggested way to use <code class="bit-code">2bit-ui</code> is
       exclusively by adding CSS classes to elements you want to style. But
       sometimes your HTML is constrained to be entirely
       <code class="bit-code">class</code> free.
@@ -319,10 +300,7 @@ you may have about two sentences more than you need. SK -->
 
     <inject-example data-example="auto"></inject-example>
 
-    <footer>
-      &copy; 2020
-      <a href="https://www.wavebeem.com" class="bit-link">Brian Mock</a>
-    </footer>
+    <site-footer></site-footer>
 
     <template id="template-auto">
       <div class="bit-auto">
@@ -397,7 +375,7 @@ you may have about two sentences more than you need. SK -->
         <br />
         <label>
           <span>Select</span>
-          <select>
+          <select style="min-width: 20ch">
             <option disabled selected>&ndash;</option>
             <option>Option 1</option>
             <option>Option 2</option>
@@ -430,8 +408,10 @@ you may have about two sentences more than you need. SK -->
             >
           </label>
           <div>
-            <input type="checkbox" />
-            <label>Checkbox label sibling</label>
+            <input type="checkbox" id="checkbox__2022-12-18__11.42.40" />
+            <label for="checkbox__2022-12-18__11.42.40"
+              >Checkbox label sibling</label
+            >
           </div>
           <label>
             <input type="checkbox" disabled />
@@ -471,9 +451,6 @@ console.log("Hello, world!");</pre
     </template>
 
     <template id="template-link">
-      <custom-properties-editor
-        data-properties="--bit-underline-thickness"
-      ></custom-properties-editor>
       <p>
         This is an
         <a href="#" class="bit-link">example link</a>
@@ -495,8 +472,8 @@ console.log("Hello, world!");</pre
       </p>
     </template>
 
-    <template id="template-round">
-      <div style="--bit-border-radius: 5px;" class="bit-card site-columns-auto">
+    <template id="template-sharp">
+      <div style="--bit-border-radius: 0px" class="bit-card site-columns-auto">
         <button class="bit-button">OK</button>
         <button class="bit-button">Cancel</button>
         <input class="bit-input" placeholder="Input" />
@@ -517,12 +494,8 @@ console.log("Hello, world!");</pre
         <button type="button" class="bit-button" disabled>Delete</button>
         <button type="button" class="bit-button">&minus;</button>
         <button type="button" class="bit-button">+</button>
-        <button type="button" class="bit-button" disabled>
-          +
-        </button>
-        <button type="button" class="bit-button" disabled>
-          &minus;
-        </button>
+        <button type="button" class="bit-button" disabled>+</button>
+        <button type="button" class="bit-button" disabled>&minus;</button>
         <button type="button" class="bit-button">
           Create from template...
         </button>
@@ -766,7 +739,7 @@ Disabled.</textarea
 
     <template id="template-tableBasic">
       <div class="site-table-responsive">
-        <table class="bit-table" style="width: 100%;">
+        <table class="bit-table" style="width: 100%">
           <thead>
             <tr>
               <th>#</th>
@@ -818,38 +791,43 @@ Disabled.</textarea
 
     <template id="template-getCreative">
       <style>
-        .site-theme-white {
-          --bit-color0: black;
-          --bit-color1: white;
+        .site-palette-white {
+          --bit-color-fg: black;
+          --bit-color-bg: white;
+          --bit-color-shadow: whitesmoke;
+          --bit-color-accent: blue;
         }
 
-        .site-theme-blue {
-          --bit-color0: hsl(200, 100%, 20%);
-          --bit-color1: hsl(200, 100%, 90%);
+        .site-palette-blue {
+          --bit-color-fg: hsl(200 100% 20%);
+          --bit-color-bg: hsl(200 100% 90%);
+          --bit-color-shadow: hsl(200 100% 80%);
+          --bit-color-accent: hsl(200 100 30%);
         }
 
-        .site-theme-red {
-          --bit-color0: hsl(0, 100%, 20%);
-          --bit-color1: hsl(0, 100%, 90%);
+        .site-palette-red {
+          --bit-color-fg: hsl(0, 100%, 20%);
+          --bit-color-bg: hsl(0, 100%, 90%);
+          --bit-color-shadow: hsl(0 100% 80%);
+          --bit-color-accent: hsl(0 100% 30%);
         }
       </style>
-      <div class="bit-card site-columns-auto site-theme-white">
-        <button type="button" class="bit-button site-theme-blue">
-          Blue
-        </button>
-        <button type="button" class="bit-button site-theme-red">
-          Red
-        </button>
+      <div class="bit-card site-columns-auto site-palette-white">
+        <button type="button" class="bit-button site-palette-blue">Blue</button>
+        <button type="button" class="bit-button site-palette-red">Red</button>
         <button
           type="button"
           class="bit-button"
-          style="--bit-color0: #222222; --bit-color1: #eeeeee;"
+          style="
+            --bit-color-fg: #222;
+            --bit-color-bg: #eee;
+            --bit-color-shadow: #ddd;
+            --bit-color-accent: #00f;
+          "
         >
           Inline Styles
         </button>
-        <button type="button" class="bit-button">
-          Default
-        </button>
+        <button type="button" class="bit-button">Default</button>
       </div>
     </template>
 
@@ -1002,22 +980,39 @@ Disabled.</textarea
     </template>
 
     <template id="template-card">
-      <div class="site-columns-auto">
-        <div class="bit-card">
-          This is a 1bit-ui Card. It has a 3D shadow effect, as well as some
-          padding on the inside.
+      <div class="site-flex-column site-gap">
+        <div class="site-flex-row-wrap">
+          <div class="bit-card">
+            <div style="width: 50px; height: 50px; background: red"></div>
+          </div>
+          <div class="bit-card">
+            <div style="width: 50px; height: 50px; background: blue"></div>
+          </div>
+          <div class="bit-card">
+            <div style="width: 50px; height: 50px; background: green"></div>
+          </div>
+          <div class="bit-card">
+            <div style="width: 50px; height: 50px; background: magenta"></div>
+          </div>
         </div>
-        <div class="bit-card">
-          This is a 1bit-ui Card. It has a 3D shadow effect, as well as some
-          padding on the inside.
-        </div>
-        <div class="bit-card">
-          This is a 1bit-ui Card. It has a 3D shadow effect, as well as some
-          padding on the inside.
-        </div>
-        <div class="bit-card">
-          This is a 1bit-ui Card. It has a 3D shadow effect, as well as some
-          padding on the inside.
+
+        <div class="site-columns-auto">
+          <div class="bit-card">
+            This is a 2bit-ui Card. It has a border and comfortable padding to
+            frame your content.
+          </div>
+          <div class="bit-card">
+            This is a 2bit-ui Card. It has a border and comfortable padding to
+            frame your content.
+          </div>
+          <div class="bit-card">
+            This is a 2bit-ui Card. It has a border and comfortable padding to
+            frame your content.
+          </div>
+          <div class="bit-card">
+            This is a 2bit-ui Card. It has a border and comfortable padding to
+            frame your content.
+          </div>
         </div>
       </div>
     </template>
@@ -1026,26 +1021,24 @@ Disabled.</textarea
       <div class="site-flex-column site-gap">
         <div class="site-flex-row-wrap">
           <div class="bit-box">
-            <div style="width: 50px; height: 50px; background: red;"></div>
+            <div style="width: 50px; height: 50px; background: red"></div>
           </div>
           <div class="bit-box">
-            <div style="width: 50px; height: 50px; background: blue;"></div>
+            <div style="width: 50px; height: 50px; background: blue"></div>
           </div>
           <div class="bit-box">
-            <div style="width: 50px; height: 50px; background: green;"></div>
+            <div style="width: 50px; height: 50px; background: green"></div>
           </div>
           <div class="bit-box">
-            <div style="width: 50px; height: 50px; background: magenta;"></div>
+            <div style="width: 50px; height: 50px; background: magenta"></div>
           </div>
         </div>
         <div class="site-columns-auto">
           <div class="bit-box">
-            This is a 1bit-ui Box. It has a simple border and just enough
-            padding to offset your content for a bit of contrast.
+            This is a 2bit-ui Box. It has a simple border and minimal padding.
           </div>
           <div class="bit-box">
-            This is a 1bit-ui Box. It has a simple border and just enough
-            padding to offset your content for a bit of contrast.
+            This is a 2bit-ui Box. It has a simple border and minimal padding.
           </div>
         </div>
       </div>

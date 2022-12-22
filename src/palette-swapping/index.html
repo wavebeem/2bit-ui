@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" class="bit-root bit-scrollbar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Examples | 2bit-ui</title>
+    <link rel="icon" sizes="16x16" href="/favicon-16.png" />
+    <link rel="icon" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" href="/2bit-ui.css" />
+    <link rel="stylesheet" href="/site.css" />
+    <script type="module" src="/palette-swapping/palette-swapping.js"></script>
+    <script
+      async
+      defer
+      data-domain="2bit-ui.wavebeem.com"
+      src="https://plausible.io/js/plausible.js"
+    ></script>
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@wavebeem" />
+    <meta name="twitter:creator" content="@wavebeem" />
+    <meta name="og:title" content="2bit-ui" />
+    <meta
+      name="og:description"
+      content="A CSS library for 2-bit inspired design"
+    />
+    <meta
+      name="og:image"
+      content="https://2bit-ui.wavebeem.com/favicon-512.png"
+    />
+  </head>
+  <body>
+    <h1><span class="bit-code">2bit-ui</span></h1>
+
+    <site-nav></site-nav>
+
+    <h2>Palette Swapping</h2>
+
+    <p>
+      Palette swapping is a term used in video game development for using the
+      same underlying image but with the colors replaced with those from a new
+      palette. 2bit-ui was designed with this in mind. It has a similar 2-bit (4
+      color) design like the original monochrome Game Boy. By palette swapping
+      each element we can achieve many more colors on screen, like on the Game
+      Boy Color.
+    </p>
+
+    <div class="site-flex-row-wrap">
+      <site-palette-example
+        class="bit-box site-flex-column"
+        data-color1="#000"
+        data-color2="#ff0"
+      ></site-palette-example>
+      <site-palette-example
+        class="bit-box site-flex-column"
+        data-color1="#000"
+        data-color2="#0ff"
+      ></site-palette-example>
+      <site-palette-example
+        class="bit-box site-flex-column"
+        data-color1="#000"
+        data-color2="#f0f"
+      ></site-palette-example>
+    </div>
+
+    <h3>General Styles</h3>
+
+    <p>Let's start with a basic pink &amp; green theme.</p>
+
+    <site-example-css>
+      <pre class="bit-pre">
+.bit-root {
+  --bit-color-bg: hsl(340 100% 95%);
+  --bit-color-fg: hsl(340 100% 30%);
+  --bit-color-shadow: hsl(340 80% 80%);
+  --bit-color-accent: hsl(160 100% 24%);
+}
+</pre
+      >
+    </site-example-css>
+
+    <select class="bit-select">
+      <option>Example select &ndash; Option 1</option>
+      <option>Example select &ndash; Option 2</option>
+      <option>Example select &ndash; Option 3</option>
+    </select>
+
+    <h3>Card Styles</h3>
+
+    <p>Cards should have a slightly lighter background.</p>
+
+    <site-example-css>
+      <pre class="bit-pre">
+.bit-card {
+  --bit-color-bg: hsl(340 100% 96%);
+  --bit-color-fg: hsl(340 100% 30%);
+  --bit-color-shadow: hsl(340 80% 85%);
+  --bit-color-accent: hsl(160 100% 24%);
+}
+</pre
+      >
+    </site-example-css>
+
+    <div class="site-flex-row-wrap site-gap">
+      <div class="bit-card">
+        <b>Example heading</b>
+        <div class="site-spacer"></div>
+        <div>Content would go here.</div>
+      </div>
+      <div class="bit-card">
+        <b>Example heading</b>
+        <div class="site-spacer"></div>
+        <div>Content would go here.</div>
+      </div>
+      <div class="bit-card">
+        <b>Example heading</b>
+        <div class="site-spacer"></div>
+        <div>Content would go here.</div>
+      </div>
+    </div>
+
+    <h3>Form Styles</h3>
+
+    <p>
+      Text inputs, text areas, radio buttons, checkboxes, and selects should
+      have a slightly lighter background and more subtle shadow.
+    </p>
+
+    <site-example-css>
+      <pre class="bit-pre">
+.bit-checkbox,
+.bit-radio,
+.bit-input,
+.bit-select {
+  --bit-color-bg: hsl(340 100% 98%);
+  --bit-color-fg: hsl(340 100% 30%);
+  --bit-color-shadow: hsl(340 80% 90%);
+  --bit-color-accent: hsl(160 100% 24%);
+}
+</pre
+      >
+    </site-example-css>
+
+    <div class="site-flex-column site-gap">
+      <div class="site-flex-row-wrap site-gap">
+        <input name="test" type="radio" class="bit-radio" checked />
+        <input name="test" type="radio" class="bit-radio" />
+        <input type="checkbox" class="bit-checkbox" checked />
+        <input type="checkbox" class="bit-checkbox" />
+        <input class="bit-input" value="Text input" />
+        <select class="bit-select" style="min-width: 20ch">
+          <option>Select</option>
+        </select>
+      </div>
+      <div class="site-flex-row-wrap site-gap">
+        <textarea class="bit-input">Text area</textarea>
+      </div>
+    </div>
+
+    <h3>Button Styles</h3>
+
+    <p>Finally, buttons look just a little different so they stand out.</p>
+
+    <site-example-css>
+      <pre class="bit-pre">
+.bit-button {
+  --bit-color-bg: hsl(340 100% 93%);
+  --bit-color-fg: hsl(340 100% 30%);
+  --bit-color-shadow: hsl(340 80% 83%);
+  --bit-color-accent: hsl(160 100% 21%);
+}</pre
+      >
+    </site-example-css>
+
+    <button type="button" class="bit-button">Button</button>
+
+    <div class="site-spacer"></div>
+
+    <h3>Full Example</h3>
+
+    <p>Putting this all together, we get a form that looks like this:</p>
+
+    <div class="site-columns-auto" style="--grid-min: 20rem">
+      <form class="bit-card" action="" onsubmit="event.preventDefault();">
+        <h3 class="site-example-heading">Welcome Back!</h3>
+        <div class="site-flex-column">
+          <label for="l-fake1">Display Name</label>
+          <input type="text" class="bit-input" id="l-fake1" />
+          <div class="site-spacer"></div>
+
+          <label for="l-favorite-animal">Favorite Animal</label>
+          <input type="text" class="bit-input" id="l-favorite-animal" />
+          <div class="site-spacer"></div>
+
+          <div class="site-spacer"></div>
+          <button type="button" class="bit-button">Log In</button>
+        </div>
+      </form>
+
+      <form class="bit-card" action="" onsubmit="event.preventDefault();">
+        <h3 class="site-example-heading">Edit Profile</h3>
+        <div class="site-flex-column">
+          <label for="r-state">State</label>
+          <select class="bit-select" id="r-state">
+            <option selected disabled>&ndash;</option>
+            <option>Alabama</option>
+            <option>Alaska</option>
+            <option>Arizona</option>
+            <option>Arkansas</option>
+            <option>California</option>
+            <option>Colorado</option>
+            <option>Connecticut</option>
+            <option>Delaware</option>
+            <option>Florida</option>
+            <option>Georgia</option>
+            <option>Hawaii</option>
+            <option>Idaho</option>
+            <option>Illinois</option>
+            <option>Indiana</option>
+            <option>Iowa</option>
+            <option>Kansas</option>
+            <option>Kentucky</option>
+            <option>Louisiana</option>
+            <option>Maine</option>
+            <option>Maryland</option>
+            <option>Massachusetts</option>
+            <option>Michigan</option>
+            <option>Minnesota</option>
+            <option>Mississippi</option>
+            <option>Missouri</option>
+            <option>Montana</option>
+            <option>Nebraska</option>
+            <option>Nevada</option>
+            <option>New Hampshire</option>
+            <option>New Jersey</option>
+            <option>New Mexico</option>
+            <option>New York</option>
+            <option>North Carolina</option>
+            <option>North Dakota</option>
+            <option>Ohio</option>
+            <option>Oklahoma</option>
+            <option>Oregon</option>
+            <option>Pennsylvania</option>
+            <option>Rhode Island</option>
+            <option>South Carolina</option>
+            <option>South Dakota</option>
+            <option>Tennessee</option>
+            <option>Texas</option>
+            <option>Utah</option>
+            <option>Vermont</option>
+            <option>Virginia</option>
+            <option>Washington</option>
+            <option>West Virginia</option>
+            <option>Wisconsin</option>
+            <option>Wyoming</option>
+          </select>
+          <div class="site-spacer"></div>
+
+          <fieldset class="bit-fieldset">
+            <legend class="bit-legend">Favorite Animal</legend>
+            <div class="bit-field">
+              <input
+                checked
+                type="radio"
+                class="bit-radio"
+                name="r-favorite-animal"
+                value="cat"
+                id="r-favorite-animal-cat"
+              />
+              <label for="r-favorite-animal-cat">Cat</label>
+            </div>
+            <div class="bit-field">
+              <input
+                type="radio"
+                class="bit-radio"
+                name="r-favorite-animal"
+                value="dog"
+                id="r-favorite-animal-dog"
+              />
+              <label for="r-favorite-animal-dog">Dog</label>
+            </div>
+            <div class="bit-field">
+              <input
+                type="radio"
+                class="bit-radio"
+                name="r-favorite-animal"
+                value="Other"
+                id="r-favorite-animal-other"
+              />
+              <label for="r-favorite-animal-other">Other</label>
+            </div>
+            <div class="bit-field">
+              <input
+                type="radio"
+                class="bit-radio"
+                name="r-favorite-animal"
+                value="Disabled"
+                id="r-favorite-animal-disabled"
+                disabled
+              />
+              <label for="r-favorite-animal-disabled">Disabled</label>
+            </div>
+          </fieldset>
+          <div class="site-spacer"></div>
+
+          <fieldset class="bit-fieldset">
+            <legend class="bit-legend">Pizza Toppings</legend>
+            <div class="bit-field">
+              <input
+                checked
+                type="checkbox"
+                class="bit-checkbox"
+                name="r-pizza"
+                value="cat"
+                id="r-pizza-pineapple"
+              />
+              <label for="r-pizza-pineapple">Pineapple</label>
+            </div>
+            <div class="bit-field">
+              <input
+                type="checkbox"
+                class="bit-checkbox"
+                name="r-pizza"
+                value="dog"
+                id="r-pizza-mushroom"
+              />
+              <label for="r-pizza-mushroom">Mushroom</label>
+            </div>
+            <div class="bit-field">
+              <input
+                type="checkbox"
+                class="bit-checkbox"
+                name="r-pizza"
+                value="Other"
+                id="r-pizza-olives"
+              />
+              <label for="r-pizza-olives">Olives</label>
+            </div>
+            <div class="bit-field">
+              <input
+                type="checkbox"
+                class="bit-checkbox"
+                name="r-pizza"
+                value="Disabled"
+                id="r-pizza-disabled"
+                disabled
+              />
+              <label for="r-pizza-disabled">Disabled</label>
+            </div>
+          </fieldset>
+          <div class="site-spacer"></div>
+
+          <div class="site-flex-column">
+            <label for="r-delivery-instructions">Delivery Instructions</label>
+            <textarea
+              rows="4"
+              id="r-delivery-instructions"
+              class="bit-input"
+            ></textarea>
+          </div>
+
+          <div class="site-spacer"></div>
+          <button type="submit" class="bit-button">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <h3>A note about inheritance</h3>
+
+    <p>
+      Note that CSS custom properties are inherited, so doing palette swapping
+      on container elements can have unintended consequences. I recommend always
+      overriding all 4 <code class="bit-code">--bit-color-*</code> properties
+      every time, to ensure that the correct colors always go together.
+    </p>
+
+    <site-footer></site-footer>
+  </body>
+</html>
