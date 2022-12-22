@@ -1,1 +1,0 @@
-- Add inheritance caveat to palette swapping page
