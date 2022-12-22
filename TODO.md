@@ -1,6 +1,4 @@
 - Add inheritance caveat to palette swapping page
 - Add blockquote
 - Add modal
-- 2px underline for links?
-- Checkbox/radio button NO gap for checked?
 - Simplify select and draw just an arrow?

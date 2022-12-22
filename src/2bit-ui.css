@@ -148,15 +148,15 @@
 .bit-checkbox:checked,
 .bit-radio:checked {
   background: var(--bit-color-accent);
-  box-shadow: inset 0 0 0 2px var(--bit-color-bg),
-    inset 0 0 0 6px var(--bit-color-accent);
+  box-shadow: inset 0 0 0 6px var(--bit-color-accent);
 }
 
 .bit-auto input[type="radio"]:checked,
 .bit-radio:checked {
   --_bit-radio-blur: 0.25px;
-  box-shadow: inset 0 0 0 2px var(--bit-color-bg);
+  box-shadow: none;
   background-color: var(--bit-color-accent);
+  border-color: var(--bit-color-accent);
   background-image: radial-gradient(
     var(--bit-color-bg),
     var(--bit-color-bg) calc(25% - var(--_bit-radio-blur)),
@@ -173,6 +173,7 @@
   --_bit-checkbox-end: calc(
     var(--_bit-checkbox-start) + var(--_bit-checkbox-size)
   );
+  border-color: var(--bit-color-accent);
   background-color: var(--bit-color-accent);
   background-image: linear-gradient(
       45deg,
@@ -192,19 +193,19 @@
       transparent calc(var(--_bit-checkbox-end) + var(--_bit-checkbox-blur)),
       transparent
     );
-  box-shadow: inset 0 0 0 2px var(--bit-color-bg),
-    inset 0 0 0 6px var(--bit-color-accent);
+  box-shadow: inset 0 0 0 6px var(--bit-color-accent);
 }
 
 .bit-auto input[type="radio"]:checked:hover,
 .bit-radio:checked:hover {
-  box-shadow: inset 0 0 0 1px var(--bit-color-fg),
+  border-color: var(--bit-color-accent);
+  box-shadow: inset 0 0 0 1px var(--bit-color-accent),
     inset 0 0 0 3px var(--bit-color-bg);
 }
 
 .bit-auto input[type="checkbox"]:checked:hover,
 .bit-checkbox:checked:hover {
-  box-shadow: inset 0 0 0 1px var(--bit-color-fg),
+  box-shadow: inset 0 0 0 1px var(--bit-color-accent),
     inset 0 0 0 3px var(--bit-color-bg), inset 0 0 0 6px var(--bit-color-accent);
 }
 
