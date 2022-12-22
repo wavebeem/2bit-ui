@@ -5,7 +5,7 @@ function htmlToCode(code) {
   const match = lines[0].match(/^[ ]*/);
   if (match) {
     // TODO: This is dangerous; we should only remove an equivalent amount
-    // of trailing whitespace, not just any arbitrary chunk of `length`
+    // of leading whitespace, not just any arbitrary chunk of `length`
     // characters...
     const length = match[0].length;
     for (const [index, value] of lines.entries()) {
@@ -55,7 +55,7 @@ const keys = [
   "--bit-code-padding-vertical",
   "--bit-radiocheckbox-size",
   "--bit-border-radius",
-  "--bit-select-handle-width",
+  "--bit-underline-thickness",
 ];
 
 for (const key of keys) {
