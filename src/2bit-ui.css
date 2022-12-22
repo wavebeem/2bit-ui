@@ -201,6 +201,7 @@
 .bit-auto input[type="radio"]:disabled,
 .bit-checkbox:disabled,
 .bit-radio:disabled {
+  background: transparent;
   opacity: 0.5;
   border-style: dotted;
   box-shadow: none;
@@ -290,6 +291,7 @@
 .bit-auto input[type="submit"]:disabled,
 .bit-auto input[type="color"]:disabled,
 .bit-button:disabled {
+  background: transparent;
   transform: none;
   opacity: 0.5;
   box-shadow: none;
@@ -362,6 +364,7 @@
 
 .bit-auto select:disabled,
 .bit-select:disabled {
+  background: transparent;
   opacity: 0.5;
   border-color: var(--bit-color-fg);
   border-style: dotted;
@@ -429,6 +432,7 @@
 .bit-auto input[type="password"]:disabled,
 .bit-auto textarea:disabled,
 .bit-input:disabled {
+  background: transparent;
   opacity: 0.5;
   box-shadow: none;
   border-color: var(--bit-color-fg);
