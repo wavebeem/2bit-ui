@@ -171,7 +171,7 @@ class HTMLSiteFooterElement extends HTMLElement {
     this.innerHTML = html`
       <footer class="bit-card">
         &copy; <span data-slot="year"></span>
-        <a href="https://www.wavebeem.com" class="bit-link">Brian Mock</a>
+        <a href="https://www.wavebeem.com" class="bit-link">Sage Fennel</a>
       </footer>
     `;
     $("[data-slot='year']", this).textContent = new Date().getFullYear();

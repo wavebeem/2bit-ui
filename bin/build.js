@@ -14,7 +14,7 @@ const header = `\
 /**
  * @license MIT
  * 2bit-ui v${version}
- * Copyright ${year} Brian Mock
+ * Copyright ${year} Sage Fennel
  * https://2bit-ui.wavebeem.com
  */
 
