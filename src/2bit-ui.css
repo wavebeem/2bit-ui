@@ -302,7 +302,7 @@
 .bit-auto select,
 .bit-select {
   --_bit-select-blur: 0.5px;
-  --_bit-select-handle-thickness: 4px;
+  --_bit-select-handle-thickness: 2px;
   --_bit-select-handle-width: 1rem;
   box-sizing: border-box;
   -webkit-appearance: none;
