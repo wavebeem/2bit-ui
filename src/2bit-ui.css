@@ -130,7 +130,7 @@
 .bit-radio:focus {
   box-shadow: none;
   outline: 3px solid var(--bit-color-accent);
-  outline-offset: -1px;
+  outline-offset: -2px;
 }
 
 .bit-auto input[type="checkbox"]:checked,
@@ -193,7 +193,7 @@
   box-shadow: inset 0 0 0 2px var(--bit-color-bg),
     inset 0 0 0 6px var(--bit-color-accent);
   outline: 3px solid var(--bit-color-accent);
-  outline-offset: -1px;
+  outline-offset: -2px;
 }
 
 .bit-auto input[type="checkbox"]:disabled,
@@ -475,10 +475,13 @@
 
 .bit-auto legend,
 .bit-legend {
-  border: 1px solid var(--bit-color-shadow);
-  padding: var(--bit-legend-padding-vertical)
-    var(--bit-legend-padding-horizontal);
+  border: 0 solid var(--bit-color-shadow);
+  padding-top: var(--bit-legend-padding-vertical);
+  padding-right: var(--bit-legend-padding-horizontal);
+  padding-bottom: var(--bit-legend-padding-vertical);
+  padding-left: 0;
   margin: 0;
+  margin-left: calc(-1 * var(--bit-fieldset-padding-vertical) - 1px);
   border-radius: var(--bit-border-radius);
 }
 
