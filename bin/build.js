@@ -3,7 +3,6 @@
 
 const sh = require("shelljs");
 const path = require("path");
-
 const { version } = require("../package.json");
 
 sh.config.fatal = true;
