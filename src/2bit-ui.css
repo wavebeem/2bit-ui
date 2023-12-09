@@ -121,8 +121,7 @@
   padding: 2px;
   color: var(--bit-color-fg);
   border: 1px solid var(--bit-color-fg);
-  box-shadow: inset 0 1px 0 var(--bit-color-fg),
-    inset 0 3px 0 var(--bit-color-shadow);
+  box-shadow: inset 0 2px 0 var(--bit-color-shadow);
 }
 
 .bit-auto input[type="checkbox"]:focus,
@@ -263,8 +262,7 @@
     var(--bit-button-padding-horizontal);
   font: inherit;
   border: 1px solid var(--bit-color-fg);
-  box-shadow: inset 0 -1px 0 var(--bit-color-fg),
-    inset 0 -3px 0 var(--bit-color-shadow);
+  box-shadow: inset 0 -2px 0 var(--bit-color-shadow);
   border-radius: var(--bit-border-radius);
 }
 
@@ -337,8 +335,7 @@
     calc(100% - 1rem) calc(50% - var(--_bit-select-handle-thickness)),
     calc(100% - 0.5rem) 50%, calc(100% - 1rem) 50%;
   background-size: 0.5rem 0.5rem;
-  box-shadow: inset 0 -1px 0 var(--bit-color-fg),
-    inset 0 -3px 0 var(--bit-color-shadow);
+  box-shadow: inset 0 -2px 0 var(--bit-color-shadow);
   padding: var(--bit-select-padding-vertical)
     var(--bit-select-padding-horizontal);
   padding-right: calc(
@@ -405,8 +402,7 @@
   font: inherit;
   padding: var(--bit-input-padding-vertical) var(--bit-input-padding-horizontal);
   border: 1px solid var(--bit-color-fg);
-  box-shadow: inset 0 1px 0 var(--bit-color-fg),
-    inset 0 3px 0 var(--bit-color-shadow);
+  box-shadow: inset 0 2px 0 var(--bit-color-shadow);
   border-radius: var(--bit-border-radius);
 }
 
