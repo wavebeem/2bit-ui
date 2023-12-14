@@ -81,7 +81,7 @@ class InjectExampleElement extends HTMLElement {
     pre.dataset.exampleName = name;
     pre.dataset.exampleType = "html";
     const preH3 = document.createElement("h3");
-    preH3.textContent = "Code";
+    preH3.textContent = "Show HTML & CSS";
     preH3.style.display = "inline";
     const details = document.createElement("details");
     const summary = document.createElement("summary");

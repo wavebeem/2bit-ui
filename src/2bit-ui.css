@@ -7,8 +7,8 @@
   --bit-color-accent: hsl(202 100% 30%);
 
   /* General */
-  --bit-border-radius: 2px;
-  --bit-underline-thickness: 2px;
+  --bit-border-radius: 0px;
+  --bit-underline-thickness: 1px;
 
   /* Button */
   --bit-button-padding-horizontal: 1rem;
@@ -48,6 +48,8 @@
 
   /* Radio buttons & checkboxes */
   --bit-radiocheckbox-size: 1.5em;
+  --bit-radiocheckbox-margin-horizontal: 4px;
+  --bit-radiocheckbox-margin-vertical: 4px;
 
   background: var(--bit-color-bg);
   color: var(--bit-color-fg);
@@ -115,7 +117,10 @@
   font: inherit;
   width: var(--bit-radiocheckbox-size);
   height: var(--bit-radiocheckbox-size);
-  margin: 2px;
+  margin-left: var(--bit-radiocheckbox-margin-horizontal);
+  margin-right: var(--bit-radiocheckbox-margin-horizontal);
+  margin-top: var(--bit-radiocheckbox-margin-vertical);
+  margin-bottom: var(--bit-radiocheckbox-margin-vertical);
   background: var(--bit-color-bg);
   background-clip: padding-box;
   padding: 2px;
@@ -303,7 +308,7 @@
 .bit-select {
   --_bit-select-blur: 0.5px;
   --_bit-select-handle-thickness: 2px;
-  --_bit-select-handle-width: 1rem;
+  --_bit-select-handle-width: 1.5rem;
   box-sizing: border-box;
   -webkit-appearance: none;
   appearance: none;
@@ -504,7 +509,7 @@
   color: var(--bit-color-fg);
   border: 1px solid var(--bit-color-shadow);
   padding: var(--bit-card-padding-vertical) var(--bit-card-padding-horizontal);
-  box-shadow: 0 1px 0 0 var(--bit-color-shadow);
+  box-shadow: inset 0 -1px 0 0 var(--bit-color-shadow);
   border-radius: var(--bit-border-radius);
 }
 
