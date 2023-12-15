@@ -22,41 +22,16 @@ function cleanCSSPropertyValue(value) {
 const bitRoot = document.querySelector(".bit-root");
 const baseCustomProperties = {};
 const bitRootStyle = getComputedStyle(bitRoot);
-// 2020-03-10
+// `getComputedStyle` omits custom properties in Chromium for some reason. So we
+// have to work way harder and parse the actual stylesheet to fill in these
+// variables. To keep things simple, we're scanning all stylesheets for all
+// properties starting with `--bit-`.
 //
-// There's some kind of... issue with getComputedStyle where custom properties
-// don't show up at first? Might be a race condition of this JS file vs the CSS
-// file I'm trying to get the values out of? Does the JS run before the CSS is
-// applied? I have no idea.
-//
-// https://twitter.com/wavebeem/status/1237606557380042752
-const keys = [
-  "--bit-color-bg",
-  "--bit-color-fg",
-  "--bit-color-shadow",
-  "--bit-color-accent",
-  "--bit-button-padding-horizontal",
-  "--bit-button-padding-vertical",
-  "--bit-select-padding-horizontal",
-  "--bit-select-padding-vertical",
-  "--bit-input-padding-horizontal",
-  "--bit-input-padding-vertical",
-  "--bit-table-padding-horizontal",
-  "--bit-table-padding-vertical",
-  "--bit-fieldset-padding-horizontal",
-  "--bit-fieldset-padding-vertical",
-  "--bit-legend-padding-horizontal",
-  "--bit-legend-padding-vertical",
-  "--bit-card-padding-horizontal",
-  "--bit-card-padding-vertical",
-  "--bit-pre-padding-horizontal",
-  "--bit-pre-padding-vertical",
-  "--bit-code-padding-horizontal",
-  "--bit-code-padding-vertical",
-  "--bit-radiocheckbox-size",
-  "--bit-border-radius",
-  "--bit-underline-thickness",
-];
+// 2023-12-14 https://bugs.chromium.org/p/chromium/issues/detail?id=949807
+const keys = [...document.styleSheets]
+  .flatMap((sheet) => [...sheet.cssRules])
+  .flatMap((rules) => [...(rules.style || [])])
+  .filter((style) => style.startsWith("--bit-"));
 
 for (const key of keys) {
   baseCustomProperties[key] = cleanCSSPropertyValue(
@@ -66,6 +41,7 @@ for (const key of keys) {
 
 class InjectExampleElement extends HTMLElement {
   connectedCallback() {
+    // TODO: Don't alter class list in a custom element
     this.classList.add("site-example");
     const name = this.dataset.example;
     const template = document.getElementById(`template-${name}`);
@@ -80,16 +56,13 @@ class InjectExampleElement extends HTMLElement {
     pre.textContent = htmlToCode(template.innerHTML);
     pre.dataset.exampleName = name;
     pre.dataset.exampleType = "html";
-    const preH3 = document.createElement("h3");
-    preH3.textContent = "Show HTML & CSS";
-    preH3.style.display = "inline";
     const details = document.createElement("details");
     const summary = document.createElement("summary");
+    summary.textContent = "Show HTML & CSS";
     summary.className = "bit-button";
     summary.style.maxWidth = "max-content";
     summary.style.marginTop = "1rem";
     summary.style.userSelect = "none";
-    summary.insertAdjacentElement("beforeend", preH3);
     details.insertAdjacentElement("beforeend", summary);
     if ("properties" in this.dataset) {
       const propertyEditor = document.createElement("custom-properties-editor");
@@ -111,6 +84,7 @@ class CustomPropertiesEditorElement extends HTMLElement {
       .trim()
       .split(/\s+/)
       .filter((x) => x);
+    // TODO: Don't alter class list in a custom element
     this.classList.add("bit-card", "site-property-editor");
     const title = document.createElement("h3");
     title.className = "site-property-editor-title";
@@ -145,6 +119,7 @@ customElements.define(
 
 class HTMLSiteTocElement extends HTMLElement {
   connectedCallback() {
+    // TODO: Don't alter class list in a custom element
     this.classList.add("bit-card", "site-toc");
     for (const h2 of document.querySelectorAll("h2")) {
       const a = document.createElement("a");
