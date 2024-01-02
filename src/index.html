@@ -41,12 +41,17 @@
 
     <p>
       2bit-ui is a small CSS library for making retro-inspired web pages using
-      four colors. Its color palette is completely customizable using CSS Custom
-      Properties.
+      four colors. Its color palette is completely customizable using
+      <a
+        class="bit-link"
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*"
+        target="_blank"
+        >CSS Custom Properties.</a
+      >
     </p>
 
     <h2>2bit-ui Examples</h2>
-    <p>Click the buttons to see 2bit-ui in action.</p>
+    <p>Click the buttons to see 2bit-ui color palettes in action.</p>
     <theme-switchers>
       <button data-theme-switcher class="bit-button">Default</button>
       <button
@@ -61,53 +66,13 @@
       </button>
       <button
         data-theme-switcher
-        data-bit-color-fg="hsl(240 75% 20%)"
-        data-bit-color-bg="hsl(240 30% 94%)"
-        data-bit-color-shadow="hsl(240 30% 65%)"
-        data-bit-color-accent="hsl(110 60% 30%)"
+        data-bit-color-fg="hsl(200 100% 20%)"
+        data-bit-color-bg="hsl(200 100% 90%)"
+        data-bit-color-shadow="hsl(200 60% 60%)"
+        data-bit-color-accent="hsl(20 100% 35%)"
         class="bit-button"
       >
-        Periwinkle
-      </button>
-      <button
-        data-theme-switcher
-        data-bit-color-fg="hsl(300 75% 20%)"
-        data-bit-color-bg="hsl(300 30% 94%)"
-        data-bit-color-shadow="hsl(300 30% 65%)"
-        data-bit-color-accent="hsl(180 55% 30%)"
-        class="bit-button"
-      >
-        Bubble Gum
-      </button>
-      <button
-        data-theme-switcher
-        data-bit-color-fg="#000"
-        data-bit-color-bg="#f8f8d0"
-        data-bit-color-shadow="#f8a800"
-        data-bit-color-accent="#0838f8"
-        class="bit-button"
-      >
-        Wyvern Warrior
-      </button>
-      <button
-        data-theme-switcher
-        data-bit-color-fg="#393939"
-        data-bit-color-bg="#deffde"
-        data-bit-color-shadow="#adadad"
-        data-bit-color-accent="#5b52ff"
-        class="bit-button"
-      >
-        Crystal Critters
-      </button>
-      <button
-        data-theme-switcher
-        data-bit-color-fg="hsl(340 15% 15%)"
-        data-bit-color-bg="hsl(40 85% 75%)"
-        data-bit-color-shadow="hsl(35 100% 50%)"
-        data-bit-color-accent="hsl(160 78% 22%)"
-        class="bit-button"
-      >
-        Orange Juice
+        Ocean
       </button>
       <button
         data-theme-switcher
@@ -124,30 +89,10 @@
         data-bit-color-fg="#000000"
         data-bit-color-bg="#ffffff"
         data-bit-color-shadow="#cccccc"
-        data-bit-color-accent="#0000ff"
+        data-bit-color-accent="#666666"
         class="bit-button"
       >
-        White
-      </button>
-      <button
-        data-theme-switcher
-        data-bit-color-fg="#333333"
-        data-bit-color-bg="#eeeeee"
-        data-bit-color-shadow="#cccccc"
-        data-bit-color-accent="#cc0000"
-        class="bit-button"
-      >
-        Gray
-      </button>
-      <button
-        data-theme-switcher
-        data-bit-color-fg="#161616"
-        data-bit-color-bg="#f0f0f0"
-        data-bit-color-shadow="#8f9bf6"
-        data-bit-color-accent="#ab4646"
-        class="bit-button"
-      >
-        Bicycle
+        Grayscale
       </button>
       <button
         data-theme-switcher
@@ -161,10 +106,10 @@
       </button>
       <button
         data-theme-switcher
-        data-bit-color-fg="#ccc"
-        data-bit-color-bg="#444"
-        data-bit-color-shadow="#555"
-        data-bit-color-accent="#fff"
+        data-bit-color-fg="#cccccc"
+        data-bit-color-bg="#444444"
+        data-bit-color-shadow="#888888"
+        data-bit-color-accent="#ffffff"
         class="bit-button"
       >
         Pro
@@ -172,8 +117,8 @@
       <button
         data-theme-switcher
         data-bit-color-fg="#cccccc"
-        data-bit-color-bg="#333333"
-        data-bit-color-shadow="#666666"
+        data-bit-color-bg="#222222"
+        data-bit-color-shadow="#555555"
         data-bit-color-accent="#00ffcc"
         class="bit-button"
       >
@@ -211,6 +156,16 @@
       </button>
       <button
         data-theme-switcher
+        data-bit-color-fg="hsl(250 85% 85%)"
+        data-bit-color-bg="hsl(250 40% 20%)"
+        data-bit-color-shadow="hsl(250 40% 35%)"
+        data-bit-color-accent="hsl(85 90% 50%)"
+        class="bit-button"
+      >
+        Toxic
+      </button>
+      <button
+        data-theme-switcher
         data-bit-color-fg="hsl(25 100% 40%)"
         data-bit-color-bg="hsl(25 100% 5%)"
         data-bit-color-shadow="hsl(25 100% 20%)"
@@ -239,16 +194,6 @@
       >
         Vector
       </button>
-      <button
-        data-theme-switcher
-        data-bit-color-fg="#eb0000"
-        data-bit-color-bg="#000000"
-        data-bit-color-shadow="#880000"
-        data-bit-color-accent="#ff0000"
-        class="bit-button"
-      >
-        Virtual Girl
-      </button>
     </theme-switchers>
 
     <ul class="site-list">
@@ -257,13 +202,6 @@
         <a class="bit-link" href="https://twitter.com/WildLeoKnight"
           >@WildLeoKnight</a
         >
-      </li>
-
-      <li>
-        <a class="bit-link" href="https://lospec.com/palette-list/bicycle"
-          >Bicycle</a
-        >
-        by <a href="https://lospec.com/braquen" class="bit-link">Braquen</a>
       </li>
     </ul>
 

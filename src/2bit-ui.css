@@ -8,6 +8,7 @@
 
   /* General */
   --bit-border-radius: 0px;
+  --bit-border-radius-sharp: min(2px, var(--bit-border-radius));
   --bit-underline-thickness: 1px;
 
   /* Button */
@@ -97,7 +98,7 @@
 
 .bit-auto input[type="checkbox"],
 .bit-checkbox {
-  border-radius: var(--bit-border-radius);
+  border-radius: var(--bit-border-radius-sharp);
 }
 
 .bit-auto input[type="radio"],
@@ -335,10 +336,10 @@
       transparent 50%,
       var(--bit-color-fg) calc(50% + var(--_bit-select-blur))
     );
-  background-position: calc(100% - 0.5rem)
+  background-position: calc(100% - 1rem)
       calc(50% - var(--_bit-select-handle-thickness)),
-    calc(100% - 1rem) calc(50% - var(--_bit-select-handle-thickness)),
-    calc(100% - 0.5rem) 50%, calc(100% - 1rem) 50%;
+    calc(100% - 1.5rem) calc(50% - var(--_bit-select-handle-thickness)),
+    calc(100% - 1rem) 50%, calc(100% - 1.5rem) 50%;
   background-size: 0.5rem 0.5rem;
   box-shadow: inset 0 -2px 0 var(--bit-color-shadow);
   padding: var(--bit-select-padding-vertical)
@@ -366,7 +367,8 @@
 
 .bit-auto select:disabled,
 .bit-select:disabled {
-  background: transparent;
+  /* don't override `background-image` since we use that for the arrow */
+  background-color: transparent;
   opacity: 0.5;
   border-color: var(--bit-color-fg);
   border-style: dotted;
@@ -519,7 +521,7 @@
   color: var(--bit-color-fg);
   border: 1px solid var(--bit-color-shadow);
   padding: var(--bit-box-padding-vertical) var(--bit-box-padding-horizontal);
-  border-radius: var(--bit-border-radius);
+  border-radius: var(--bit-border-radius-sharp);
 }
 
 .bit-auto,
@@ -538,7 +540,7 @@
   background: var(--bit-color-fg);
   color: var(--bit-color-bg);
   padding: var(--bit-code-padding-vertical) var(--bit-code-padding-horizontal);
-  border-radius: var(--bit-border-radius);
+  border-radius: var(--bit-border-radius-sharp);
 }
 
 .bit-auto hr,
