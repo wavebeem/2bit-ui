@@ -31,7 +31,7 @@
     />
   </head>
   <body>
-    <h1><span class="bit-code">2bit-ui</span></h1>
+    <h1><span>2bit-ui</span></h1>
 
     <site-nav></site-nav>
 
@@ -183,7 +183,7 @@
 
     <div class="site-columns-auto" style="--grid-min: 20rem">
       <form class="bit-card" action="" onsubmit="event.preventDefault();">
-        <h3 class="site-example-heading">Welcome Back!</h3>
+        <h3 class="site-example-heading">Welcome</h3>
         <div class="site-flex-column">
           <label for="l-fake1">Display Name</label>
           <input type="text" class="bit-input" id="l-fake1" />
@@ -193,8 +193,10 @@
           <input type="text" class="bit-input" id="l-favorite-animal" />
           <div class="site-spacer"></div>
 
-          <div class="site-spacer"></div>
-          <button type="button" class="bit-button">Log In</button>
+          <div class="site-flex-row-wrap">
+            <button class="bit-button bit-primary">Sign Up</button>
+            <button class="bit-button">Log In</button>
+          </div>
         </div>
       </form>
 
@@ -361,7 +363,7 @@
           </div>
 
           <div class="site-spacer"></div>
-          <button type="submit" class="bit-button">Submit</button>
+          <button type="submit" class="bit-button bit-primary">Save</button>
         </div>
       </form>
     </div>
@@ -371,8 +373,8 @@
     <p>
       Note that CSS custom properties are inherited, so doing palette swapping
       on container elements can have unintended consequences. I recommend always
-      overriding all 4 <code class="bit-code">--bit-color-*</code> properties
-      every time, to ensure that the correct colors always go together.
+      overriding all 4 <code>--bit-color-*</code> properties every time, to
+      ensure that the correct colors always go together.
     </p>
 
     <site-footer></site-footer>

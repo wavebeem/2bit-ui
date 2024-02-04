@@ -1,5 +1,19 @@
 # Changelog
 
+# v0.5.0
+
+- Added the `.bit-primary` modifier for making a more emphasized `.bit-button`
+
+- Changed the default `--bit-border-radius` to 4px
+
+- Changed `.bit-pre` to use a border instead of inverted colors, to avoid confusion with `.bit-primary`
+
+- Changed `.bit-svg` to use `currentcolor` for better compatibility with `.bit-primary`
+
+- Changed specificity of several selectors, primarily when using `.bit-auto`
+
+- Removed `.bit-code`
+
 # v0.4.0 (2024-01-01)
 
 - Fixed a bug where the `.bit-select` arrow didn't show on disabled selects

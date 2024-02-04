@@ -40,7 +40,7 @@
     <h2>Form Example</h2>
     <div class="site-columns-auto" style="--grid-min: 20rem">
       <form class="bit-card" action="" onsubmit="event.preventDefault();">
-        <h3 class="site-example-heading">Welcome Back!</h3>
+        <h3 class="site-example-heading">Welcome</h3>
         <div class="site-flex-column">
           <label for="l-fake1">Display Name</label>
           <input type="text" class="bit-input" id="l-fake1" />
@@ -50,8 +50,10 @@
           <input type="text" class="bit-input" id="l-favorite-animal" />
           <div class="site-spacer"></div>
 
-          <div class="site-spacer"></div>
-          <button class="bit-button">Log In</button>
+          <div class="site-flex-row-wrap">
+            <button class="bit-button bit-primary">Sign Up</button>
+            <button class="bit-button">Log In</button>
+          </div>
         </div>
       </form>
 
@@ -218,7 +220,7 @@
           </div>
 
           <div class="site-spacer"></div>
-          <button class="bit-button">Submit</button>
+          <button class="bit-button bit-primary">Save</button>
         </div>
       </form>
     </div>

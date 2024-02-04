@@ -7,7 +7,7 @@
   --bit-color-accent: hsl(202 100% 30%);
 
   /* General */
-  --bit-border-radius: 0px;
+  --bit-border-radius: 4px;
   --bit-border-radius-sharp: min(2px, var(--bit-border-radius));
   --bit-underline-thickness: 1px;
 
@@ -41,11 +41,9 @@
   --bit-legend-padding-horizontal: 0.5rem;
   --bit-legend-padding-vertical: 0rem;
 
-  /* Pre & code */
+  /* Pre */
   --bit-pre-padding-horizontal: 1rem;
   --bit-pre-padding-vertical: 1rem;
-  --bit-code-padding-horizontal: 0.2em;
-  --bit-code-padding-vertical: 0.1em;
 
   /* Radio buttons & checkboxes */
   --bit-radiocheckbox-size: 1.5em;
@@ -76,38 +74,40 @@
   opacity: 0.5;
 }
 
-.bit-auto label {
+.bit-auto :where(label) {
   display: block;
 }
 
-.bit-auto label > input[type="radio"] + *,
-.bit-auto label > input[type="checkbox"] + *,
-.bit-auto input[type="radio"] + label,
-.bit-auto input[type="checkbox"] + label {
+.bit-auto
+  :where(
+    label > input[type="radio"] + *,
+    label > input[type="checkbox"] + *,
+    input[type="radio"] + label,
+    input[type="checkbox"] + label
+  ) {
   padding: 2px;
   display: inline-block;
   align-self: start;
 }
 
-.bit-auto label > input[type="radio"] + *,
-.bit-auto label > input[type="checkbox"] + * {
+.bit-auto
+  :where(label > input[type="radio"] + *, label > input[type="checkbox"] + *) {
   padding-left: 4px;
 }
 
 /* Checkbox / Radio Button */
 
-.bit-auto input[type="checkbox"],
+.bit-auto :where(input[type="checkbox"]),
 .bit-checkbox {
   border-radius: var(--bit-border-radius-sharp);
 }
 
-.bit-auto input[type="radio"],
+.bit-auto :where(input[type="radio"]),
 .bit-radio {
   border-radius: 9999px;
 }
 
-.bit-auto input[type="checkbox"],
-.bit-auto input[type="radio"],
+.bit-auto :where(input[type="checkbox"], input[type="radio"]),
 .bit-checkbox,
 .bit-radio {
   align-self: start;
@@ -130,8 +130,7 @@
   box-shadow: inset 0 2px 0 var(--bit-color-shadow);
 }
 
-.bit-auto input[type="checkbox"]:focus,
-.bit-auto input[type="radio"]:focus,
+.bit-auto :where(input[type="checkbox"], input[type="radio"]):focus,
 .bit-checkbox:focus,
 .bit-radio:focus {
   box-shadow: none;
@@ -139,15 +138,14 @@
   outline-offset: -2px;
 }
 
-.bit-auto input[type="checkbox"]:checked,
-.bit-auto input[type="radio"]:checked,
+.bit-auto :where(input[type="checkbox"], input[type="radio"]):checked,
 .bit-checkbox:checked,
 .bit-radio:checked {
   background: var(--bit-color-accent);
   box-shadow: inset 0 0 0 6px var(--bit-color-accent);
 }
 
-.bit-auto input[type="radio"]:checked,
+.bit-auto :where(input[type="radio"]):checked,
 .bit-radio:checked {
   --_bit-radio-blur: 0.25px;
   box-shadow: none;
@@ -161,7 +159,7 @@
   );
 }
 
-.bit-auto input[type="checkbox"]:checked,
+.bit-auto :where(input[type="checkbox"]):checked,
 .bit-checkbox:checked {
   --_bit-checkbox-blur: 0.5px;
   --_bit-checkbox-size: 0.125em;
@@ -192,8 +190,7 @@
   box-shadow: inset 0 0 0 6px var(--bit-color-accent);
 }
 
-.bit-auto input[type="checkbox"]:checked:focus,
-.bit-auto input[type="radio"]:checked:focus,
+.bit-auto :where(input[type="checkbox"], input[type="radio"]):checked:focus,
 .bit-checkbox:checked:focus,
 .bit-radio:checked:focus {
   box-shadow: inset 0 0 0 2px var(--bit-color-bg),
@@ -202,8 +199,7 @@
   outline-offset: -2px;
 }
 
-.bit-auto input[type="checkbox"]:disabled,
-.bit-auto input[type="radio"]:disabled,
+.bit-auto :where(input[type="checkbox"], input[type="radio"]):disabled,
 .bit-checkbox:disabled,
 .bit-radio:disabled {
   background: transparent;
@@ -214,7 +210,7 @@
 
 /* Table */
 
-.bit-auto table,
+.bit-auto :where(table),
 .bit-table {
   box-sizing: border-box;
   background: var(--bit-color-bg);
@@ -222,13 +218,13 @@
   border-collapse: collapse;
 }
 
-.bit-auto table th,
+.bit-auto :where(table th),
 .bit-table th {
   padding: var(--bit-table-padding-vertical) var(--bit-table-padding-horizontal);
   text-align: left;
 }
 
-.bit-auto table tbody tr:not(:last-of-type),
+.bit-auto :where(table tbody tr):not(:last-of-type),
 .bit-table tbody tr:not(:last-of-type) {
   border-bottom: 1px solid var(--bit-color-shadow);
 }
@@ -256,10 +252,13 @@
 
 /* Button */
 
-.bit-auto button,
-.bit-auto input[type="button"],
-.bit-auto input[type="submit"],
-.bit-auto input[type="color"],
+.bit-auto
+  :where(
+    button,
+    input[type="button"],
+    input[type="submit"],
+    input[type="color"]
+  ),
 .bit-button {
   box-sizing: border-box;
   background: var(--bit-color-bg);
@@ -272,28 +271,37 @@
   border-radius: var(--bit-border-radius);
 }
 
-.bit-auto button:active,
-.bit-auto input[type="button"]:active,
-.bit-auto input[type="submit"]:active,
-.bit-auto input[type="color"]:active,
+.bit-auto
+  :where(
+    button,
+    input[type="button"],
+    input[type="submit"],
+    input[type="color"]
+  ):active,
 .bit-button:active {
   transform: translateY(1px);
 }
 
-.bit-auto button:focus,
-.bit-auto input[type="button"]:focus,
-.bit-auto input[type="submit"]:focus,
-.bit-auto input[type="color"]:focus,
+.bit-auto
+  :where(
+    button,
+    input[type="button"],
+    input[type="submit"],
+    input[type="color"]
+  ):focus,
 .bit-button:focus {
   outline: 3px solid var(--bit-color-accent);
   outline-offset: -2px;
   box-shadow: none;
 }
 
-.bit-auto button:disabled,
-.bit-auto input[type="button"]:disabled,
-.bit-auto input[type="submit"]:disabled,
-.bit-auto input[type="color"]:disabled,
+.bit-auto
+  :where(
+    button,
+    input[type="button"],
+    input[type="submit"],
+    input[type="color"]
+  ):disabled,
 .bit-button:disabled {
   background: transparent;
   transform: none;
@@ -303,13 +311,24 @@
   border-style: dotted;
 }
 
+.bit-button.bit-primary:where(:not(:disabled)) {
+  background-color: var(--bit-color-fg);
+  color: var(--bit-color-bg);
+  border-color: transparent;
+  box-shadow: none;
+  outline-offset: 1px;
+  font-weight: bold;
+}
+
 /* Select */
 
-.bit-auto select,
+.bit-auto :where(select),
 .bit-select {
   --_bit-select-blur: 0.5px;
   --_bit-select-handle-thickness: 2px;
   --_bit-select-handle-width: 1.5rem;
+  --_bit-select-handle-fg: var(--bit-color-fg);
+  --_bit-select-handle-bg: var(--bit-color-bg);
   box-sizing: border-box;
   -webkit-appearance: none;
   appearance: none;
@@ -319,22 +338,22 @@
   background-image: linear-gradient(
       -45deg,
       transparent 50%,
-      var(--bit-color-bg) calc(50% + var(--_bit-select-blur))
+      var(--_bit-select-handle-bg) calc(50% + var(--_bit-select-blur))
     ),
     linear-gradient(
       45deg,
       transparent 50%,
-      var(--bit-color-bg) calc(50% + var(--_bit-select-blur))
+      var(--_bit-select-handle-bg) calc(50% + var(--_bit-select-blur))
     ),
     linear-gradient(
       -45deg,
       transparent 50%,
-      var(--bit-color-fg) calc(50% + var(--_bit-select-blur))
+      var(--_bit-select-handle-fg) calc(50% + var(--_bit-select-blur))
     ),
     linear-gradient(
       45deg,
       transparent 50%,
-      var(--bit-color-fg) calc(50% + var(--_bit-select-blur))
+      var(--_bit-select-handle-fg) calc(50% + var(--_bit-select-blur))
     );
   background-position: calc(100% - 1rem)
       calc(50% - var(--_bit-select-handle-thickness)),
@@ -352,20 +371,20 @@
   border-radius: var(--bit-border-radius);
 }
 
-.bit-auto select:focus,
+.bit-auto :where(select):focus,
 .bit-select:focus {
   outline: 3px solid var(--bit-color-accent);
   outline-offset: -2px;
   box-shadow: none;
 }
 
-.bit-auto select:-moz-focusring,
+.bit-auto :where(select):-moz-focusring,
 .bit-select:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 var(--bit-color-fg);
 }
 
-.bit-auto select:disabled,
+.bit-auto :where(select):disabled,
 .bit-select:disabled {
   /* don't override `background-image` since we use that for the arrow */
   background-color: transparent;
@@ -377,7 +396,7 @@
 
 /* Link */
 
-.bit-auto a,
+.bit-auto :where(a),
 .bit-link {
   color: var(--bit-color-accent);
   text-decoration-line: underline;
@@ -385,7 +404,7 @@
   border-radius: var(--bit-border-radius);
 }
 
-.bit-auto a:focus,
+.bit-auto :where(a):focus,
 .bit-link:focus {
   text-decoration-line: none;
   outline: 2px solid var(--bit-color-accent);
@@ -394,14 +413,17 @@
 
 /* Input / Text Area */
 
-.bit-auto input[type="tel"],
-.bit-auto input[type="url"],
-.bit-auto input[type="text"],
-.bit-auto input[type="email"],
-.bit-auto input[type="search"],
-.bit-auto input[type="number"],
-.bit-auto input[type="password"],
-.bit-auto textarea,
+.bit-auto
+  :where(
+    input[type="tel"],
+    input[type="url"],
+    input[type="text"],
+    input[type="email"],
+    input[type="search"],
+    input[type="number"],
+    input[type="password"],
+    textarea
+  ),
 .bit-input {
   box-sizing: border-box;
   background: var(--bit-color-bg);
@@ -413,28 +435,34 @@
   border-radius: var(--bit-border-radius);
 }
 
-.bit-auto input[type="tel"]:focus,
-.bit-auto input[type="url"]:focus,
-.bit-auto input[type="text"]:focus,
-.bit-auto input[type="email"]:focus,
-.bit-auto input[type="search"]:focus,
-.bit-auto input[type="number"]:focus,
-.bit-auto input[type="password"]:focus,
-.bit-auto textarea:focus,
+.bit-auto
+  :where(
+    input[type="tel"],
+    input[type="url"],
+    input[type="text"],
+    input[type="email"],
+    input[type="search"],
+    input[type="number"],
+    input[type="password"],
+    textarea
+  ):focus,
 .bit-input:focus {
   outline: 3px solid var(--bit-color-accent);
   outline-offset: -2px;
   box-shadow: none;
 }
 
-.bit-auto input[type="tel"]:disabled,
-.bit-auto input[type="url"]:disabled,
-.bit-auto input[type="text"]:disabled,
-.bit-auto input[type="email"]:disabled,
-.bit-auto input[type="search"]:disabled,
-.bit-auto input[type="number"]:disabled,
-.bit-auto input[type="password"]:disabled,
-.bit-auto textarea:disabled,
+.bit-auto
+  :where(
+    input[type="tel"],
+    input[type="url"],
+    input[type="text"],
+    input[type="email"],
+    input[type="search"],
+    input[type="number"],
+    input[type="password"],
+    textarea
+  ):disabled,
 .bit-input:disabled {
   background: transparent;
   opacity: 0.5;
@@ -443,27 +471,33 @@
   border-style: dotted;
 }
 
-.bit-auto input[type="tel"]::placeholder,
-.bit-auto input[type="url"]::placeholder,
-.bit-auto input[type="text"]::placeholder,
-.bit-auto input[type="email"]::placeholder,
-.bit-auto input[type="search"]::placeholder,
-.bit-auto input[type="number"]::placeholder,
-.bit-auto input[type="password"]::placeholder,
-.bit-auto textarea::placeholder,
+.bit-auto
+  :where(
+    input[type="tel"],
+    input[type="url"],
+    input[type="text"],
+    input[type="email"],
+    input[type="search"],
+    input[type="number"],
+    input[type="password"],
+    textarea
+  )::placeholder,
 .bit-input::placeholder {
   color: var(--bit-color-fg);
   opacity: 0.5;
 }
 
-.bit-auto input[type="tel"]::selection,
-.bit-auto input[type="url"]::selection,
-.bit-auto input[type="text"]::selection,
-.bit-auto input[type="email"]::selection,
-.bit-auto input[type="search"]::selection,
-.bit-auto input[type="number"]::selection,
-.bit-auto input[type="password"]::selection,
-.bit-auto textarea::selection,
+.bit-auto
+  :where(
+    input[type="tel"],
+    input[type="url"],
+    input[type="text"],
+    input[type="email"],
+    input[type="search"],
+    input[type="number"],
+    input[type="password"],
+    textarea
+  )::selection,
 .bit-input::selection {
   background: var(--bit-color-fg);
   color: var(--bit-color-bg);
@@ -471,7 +505,7 @@
 
 /* Fieldset and legend */
 
-.bit-auto fieldset,
+.bit-auto :where(fieldset),
 .bit-fieldset {
   border: 1px solid var(--bit-color-shadow);
   padding: var(--bit-fieldset-padding-vertical)
@@ -480,7 +514,7 @@
   border-radius: var(--bit-border-radius);
 }
 
-.bit-auto legend,
+.bit-auto :where(legend),
 .bit-legend {
   border: 0 solid var(--bit-color-shadow);
   padding-top: var(--bit-legend-padding-vertical);
@@ -530,32 +564,23 @@
 }
 
 .bit-svg {
-  fill: var(--bit-color-fg);
+  fill: currentcolor;
 }
 
-.bit-auto :not(pre) > code,
-.bit-auto kbd,
-.bit-auto samp,
-.bit-code {
-  background: var(--bit-color-fg);
-  color: var(--bit-color-bg);
-  padding: var(--bit-code-padding-vertical) var(--bit-code-padding-horizontal);
-  border-radius: var(--bit-border-radius-sharp);
-}
-
-.bit-auto hr,
+.bit-auto :where(hr),
 .bit-hr {
   box-sizing: border-box;
   border: 0;
   border-top: 1px solid var(--bit-color-shadow);
 }
 
-.bit-auto pre,
+.bit-auto :where(pre),
 .bit-pre {
   box-sizing: border-box;
-  background: var(--bit-color-fg);
-  color: var(--bit-color-bg);
-  scrollbar-color: var(--bit-color-bg) var(--bit-color-fg);
+  background: var(--bit-color-bg);
+  color: var(--bit-color-fg);
+  scrollbar-color: var(--bit-color-fg) var(--bit-color-bg);
+  border: 1px solid var(--bit-color-shadow);
   overflow-x: auto;
   padding: var(--bit-pre-padding-vertical) var(--bit-pre-padding-horizontal);
   border-radius: var(--bit-border-radius);

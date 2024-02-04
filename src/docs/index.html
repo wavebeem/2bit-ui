@@ -210,7 +210,7 @@
     <p>
       Using the CSS class <code class="bit-code">bit-svg</code> will set the
       <code class="bit-code">fill</code> property to
-      <code class="bit-code">--bit-color-fg</code>, causing inline SVGs to
+      <code class="bit-code">currentcolor</code>, causing inline SVGs to
       automatically match your 2bit-ui theme.
     </p>
     <inject-example data-example="inlineSVG"></inject-example>
@@ -229,17 +229,6 @@
         --bit-pre-padding-vertical
       "
       data-example="pre"
-    ></inject-example>
-    <p>
-      The class <code class="bit-code">bit-code</code> can be used for inline
-      code:
-    </p>
-    <inject-example
-      data-properties="
-        --bit-code-padding-horizontal
-        --bit-code-padding-vertical
-      "
-      data-example="code"
     ></inject-example>
 
     <h2 id="scrollbars">Scrollbars</h2>
@@ -488,13 +477,6 @@
           <br />
           <hr />
           <br />
-          <div>
-            This is a <code>code</code>, this is a <kbd>kbd</kbd>, this is a
-            <samp>samp</samp>.
-          </div>
-          <br />
-          <hr />
-          <br />
           <pre>
 // JavaScript example
 console.log("Hello, world!");</pre
@@ -526,27 +508,66 @@ console.log("Hello, world!");</pre
     </template>
 
     <template id="template-rounded-corners">
-      <div style="--bit-border-radius: 8px" class="bit-card site-columns-auto">
-        <button class="bit-button">OK</button>
-        <button class="bit-button">Cancel</button>
-        <input class="bit-input" placeholder="Input" />
-        <select class="bit-select">
-          <option selected disabled>&ndash;</option>
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
-        </select>
+      <div class="site-flex-column site-gap">
+        <div
+          style="--bit-border-radius: 0px"
+          class="bit-card site-columns-auto"
+        >
+          <button class="bit-button">OK</button>
+          <button class="bit-button">Cancel</button>
+          <input class="bit-input" placeholder="Input" />
+          <select class="bit-select">
+            <option selected disabled>&ndash;</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+        </div>
+
+        <div
+          style="--bit-border-radius: 8px"
+          class="bit-card site-columns-auto"
+        >
+          <button class="bit-button">OK</button>
+          <button class="bit-button">Cancel</button>
+          <input class="bit-input" placeholder="Input" />
+          <select class="bit-select">
+            <option selected disabled>&ndash;</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+        </div>
+
+        <div
+          style="--bit-border-radius: 32px"
+          class="bit-card site-columns-auto"
+        >
+          <button class="bit-button">OK</button>
+          <button class="bit-button">Cancel</button>
+          <input class="bit-input" placeholder="Input" />
+          <select class="bit-select">
+            <option selected disabled>&ndash;</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
+        </div>
       </div>
     </template>
 
     <template id="template-buttons">
       <div class="site-flex-row-wrap">
+        <button type="button" class="bit-button bit-primary">Primary</button>
         <button type="button" class="bit-button">Save</button>
-        <button type="button" class="bit-button" disabled>Save</button>
         <button type="button" class="bit-button">Delete</button>
-        <button type="button" class="bit-button" disabled>Delete</button>
         <button type="button" class="bit-button">&minus;</button>
         <button type="button" class="bit-button">+</button>
+        <button type="button" class="bit-button bit-primary" disabled>
+          Primary
+        </button>
+        <button type="button" class="bit-button" disabled>Save</button>
+        <button type="button" class="bit-button" disabled>Delete</button>
         <button type="button" class="bit-button" disabled>+</button>
         <button type="button" class="bit-button" disabled>&minus;</button>
         <button type="button" class="bit-button">
@@ -740,17 +761,6 @@ Disabled.</textarea
 }</pre>
     </template>
 
-    <template id="template-code">
-      <p>
-        The <code class="bit-code">flatMap()</code> method first maps each
-        element using a mapping function, then flattens the result into a new
-        array. It is identical to a <code class="bit-code">map()</code> followed
-        by a <code class="bit-code">flat()</code> of depth 1, but
-        <code class="bit-code">flatMap()</code> is often quite useful, as
-        merging both into one method is slightly more efficient.
-      </p>
-    </template>
-
     <template id="template-select">
       <div class="site-flex-row-wrap">
         <select class="bit-select">
@@ -760,20 +770,7 @@ Disabled.</textarea
           <option>Option 3</option>
         </select>
 
-        <select class="bit-select" disabled>
-          <option selected disabled>Choose a country...</option>
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
-        </select>
-
         <select class="bit-select">
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
-        </select>
-
-        <select class="bit-select" disabled>
           <option>Option 1</option>
           <option>Option 2</option>
           <option>Option 3</option>
@@ -781,6 +778,19 @@ Disabled.</textarea
 
         <select class="bit-select">
           <option selected disabled>&ndash;</option>
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </select>
+
+        <select class="bit-select" disabled>
+          <option selected disabled>Choose a country...</option>
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </select>
+
+        <select class="bit-select" disabled>
           <option>Option 1</option>
           <option>Option 2</option>
           <option>Option 3</option>
@@ -988,31 +998,67 @@ Disabled.</textarea
     </template>
 
     <template id="template-inlineSVG">
-      <svg
-        class="bit-svg"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        width="48"
-        height="48"
-      >
-        <path
-          d="M16,10c-.41,7.68-12,7.75-12,0s11.59-7.69,12,0c.1,1.92,3.1,1.93,3,0-.26-4.88-3.91-9-9-9a9.1,9.1,0,0,0-9,9,9.08,9.08,0,0,0,8.59,9c5.25.23,9.14-3.93,9.41-9C19.1,8.07,16.1,8.08,16,10Z"
-        />
-        <path
-          d="M14.44,16.56l5,5a1.5,1.5,0,0,0,2.12-2.12l-5-5a1.5,1.5,0,0,0-2.12,2.12Z"
-        />
-      </svg>
-      <svg
-        class="bit-svg"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        width="48"
-        height="48"
-      >
-        <path
-          d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm2.94,16.56L12,14.25,9.06,17.56c-1.28,1.45-3.4-.68-2.12-2.12L10,12,6.94,8.56C5.66,7.12,7.78,5,9.06,6.44L12,9.75l2.94-3.31c1.28-1.45,3.4.68,2.12,2.12L14,12l3.06,3.44C18.34,16.88,16.23,19,14.94,17.56Z"
-        />
-      </svg>
+      <div class="site-flex-column site-gap">
+        <div class="site-flex-row-wrap">
+          <svg
+            class="bit-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="48"
+            height="48"
+          >
+            <path
+              d="M16,10c-.41,7.68-12,7.75-12,0s11.59-7.69,12,0c.1,1.92,3.1,1.93,3,0-.26-4.88-3.91-9-9-9a9.1,9.1,0,0,0-9,9,9.08,9.08,0,0,0,8.59,9c5.25.23,9.14-3.93,9.41-9C19.1,8.07,16.1,8.08,16,10Z"
+            />
+            <path
+              d="M14.44,16.56l5,5a1.5,1.5,0,0,0,2.12-2.12l-5-5a1.5,1.5,0,0,0-2.12,2.12Z"
+            />
+          </svg>
+          <svg
+            class="bit-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="48"
+            height="48"
+          >
+            <path
+              d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm2.94,16.56L12,14.25,9.06,17.56c-1.28,1.45-3.4-.68-2.12-2.12L10,12,6.94,8.56C5.66,7.12,7.78,5,9.06,6.44L12,9.75l2.94-3.31c1.28-1.45,3.4.68,2.12,2.12L14,12l3.06,3.44C18.34,16.88,16.23,19,14.94,17.56Z"
+            />
+          </svg>
+        </div>
+        <div class="site-flex-row-wrap">
+          <button class="bit-button bit-primary">
+            <svg
+              class="bit-svg"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="48"
+              height="48"
+              style="width: 1em; height: 1em; vertical-align: sub;"
+            >
+              <path
+                d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm2.94,16.56L12,14.25,9.06,17.56c-1.28,1.45-3.4-.68-2.12-2.12L10,12,6.94,8.56C5.66,7.12,7.78,5,9.06,6.44L12,9.75l2.94-3.31c1.28-1.45,3.4.68,2.12,2.12L14,12l3.06,3.44C18.34,16.88,16.23,19,14.94,17.56Z"
+              />
+            </svg>
+            Delete
+          </button>
+          <button class="bit-button">
+            <svg
+              class="bit-svg"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="48"
+              height="48"
+              style="width: 1em; height: 1em; vertical-align: sub;"
+            >
+              <path
+                d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm2.94,16.56L12,14.25,9.06,17.56c-1.28,1.45-3.4-.68-2.12-2.12L10,12,6.94,8.56C5.66,7.12,7.78,5,9.06,6.44L12,9.75l2.94-3.31c1.28-1.45,3.4.68,2.12,2.12L14,12l3.06,3.44C18.34,16.88,16.23,19,14.94,17.56Z"
+              />
+            </svg>
+            Delete
+          </button>
+        </div>
+      </div>
     </template>
 
     <template id="template-tableRowHeaders">
