@@ -1,5 +1,13 @@
 # Changelog
 
+# v0.6.0
+
+- Added a small highlight to the top of `.bit-primary` to make it look 3D
+
+- Fixed an issue where disabled `.bit-primary` buttons lost their bold font
+
+- Changed the `.bit-primary` focus ring to have the same size as other buttons
+
 # v0.5.0
 
 - Added the `.bit-primary` modifier for making a more emphasized `.bit-button`
